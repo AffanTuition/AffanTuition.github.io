@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Affan's Tuition - Image Gallery</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        /* Additional styles for the gallery */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .gallery img {
+            max-width: 300px;
+            height: auto;
+            display: block;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border: 5px solid black;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        /* CSS for Next and Previous buttons */
+        #next, #prev {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            background-color: #3498db; 
+            color: white; 
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #next:hover, #prev:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="menu-toggle">
+            <div class="hamburger"></div>
+        </div>
+        <img src="photo.jpg" alt="Affan's Tuition Logo" class="logo">
+        <h1>Welcome to Affan's Tuition - Image Gallery</h1>
+    </header>
+    <nav class="navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Image Gallery</a></li>
+          <li><a href="current_status.html">Open/Close</a></li>
+        </ul>
+    </nav>
+    <section id="gallery" class="section">
+        <h2>Image Gallery</h2>
+        <div class="gallery">
+            <img id="img1" 
+              src="photo.jpg" alt="Image 1">
+    
+            <img id="img2" src="pic.jpg.jpg" alt="Image 2" style="display:none;">
+            <img id="img3" src="photo.jpg" alt="Image 3" style="display:none;">
+        </div>
+        <button id="prev">Previous</button>
+        <button id="next">Next</button>
+    </section>
+
+    <script>
+        let currentImageIndex = 1;
+        let totalImages = 3; 
+
+        document.getElementById('next').addEventListener('click', function() {
+            document.getElementById('img' + currentImageIndex).style.display = 'none';
+            currentImageIndex++;
+            if (currentImageIndex > totalImages) {
+                currentImageIndex = 1;
+            }
+            document.getElementById('img' + currentImageIndex).style.display = 'block';
+        });
+
+        document.getElementById('prev').addEventListener('click', function() {
+            document.getElementById('img' + currentImageIndex).style.display = 'none';
+            currentImageIndex--;
+            if (currentImageIndex < 1) {
+                currentImageIndex = totalImages;
+            }
+            document.getElementById('img' + currentImageIndex).style.display = 'block';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #eee; /* darker bg for contrast */
+}
+
+.header {
+    background: linear-gradient(to right, #3498db, #9b59b6); /* gradient background */
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.header:hover {
+    color: #3498db; /* hover effect */
+}
+
+.homework {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform .2s; /* transition on hover */
+}
+
+.homework:hover {
+    transform: scale(1.05); /* slightly enlarge the section on hover */
+}
+
+.class-homework {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    transition: background-color .2s; /* transition on hover */
+}
+
+.class-homework:hover {
+    background-color: #e9e9e9; /* darken the bg on hover */
+}
+
+h2 {
+    text-align: center;
+    color: #9b59b6; /* change text color */
+    text-shadow: 1px 1px 2px #3498db; /* add text shadow */
+}
+
+h3 {
+    color: #3498db;
+    text-shadow: 1px 1px 2px black; /* add text shadow */
+}
+
+#today.date,
+#tomorrow-date {
+    font-weight: bold;
+}
+
+/* Styling for different classes and their homework */
+/* Adjust and add more specific styles as needed */
