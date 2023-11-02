@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tic Tac Toe</title>
+    <style>
+        /* CSS for the Game Page */
+        table {
+            margin: 10px auto;
+        }
+
+        td {
+            width: 50px;
+            height: 50px;
+            border: 1px solid #000;
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Tic Tac Toe</h1>
+    <table id="board"></table>
+    <div style="text-align:center;">
+        <button onclick="resetGame()">New Game</button>
+    </div>
+    <script>
+        let board = [];
+        let turn = 'X';
+        let winner = false;
+
+        function createBoard() {
+            let boardHTML = document.getElementById('board');
+            boardHTML.textContent = '';
+            for(let i = 0; i < 3; i++) {
+                board.push([]);
+                let row = document.createElement('tr');
+                for(let j = 0; j < 3; j++) {
+                    board[i].push('');
+                    let cell = document.createElement('td');
+                    cell.addEventListener('click', () => makeMove(i, j));
+                    row.appendChild(cell);
+                }
+                boardHTML.appendChild(row);
+            }
+        }
+
+        function makeMove(i, j) {
+            if (board[i][j] === '' && !winner) {
+                board[i][j] = turn;
+                renderBoard();
+                checkForWin();
+                turn = turn === 'X' ? 'O' : 'X';
+            }
+        }
+
+        function checkForWin() {
+            for (let i = 0; i < 3; i++) {
+                if (board[i][0] !== '' && board[i][0] === board[i][1] && board[i][1] === board[i][2]) {
+                    declareWinner(board[i][0]);
+                }
+            }
+
+            for (let i = 0; i < 3; i++) {
+                if (board[0][i] !== '' && board[0][i] === board[1][i] && board[1][i] === board[2][i]) {
+                    declareWinner(board[0][i]);
+                }
+            }
+
+            if (board[0][0] !== '' && board[0][0] === board[1][1] && board[1][1] === board[2][2]) {
+                declareWinner(board[0][0]);
+            }
+
+            if (board[0][2] !== '' && board[0][2] === board[1][1] && board[1][1] === board[2][0]) {
+                declareWinner(board[0][2]);
+            }
+        }
+
+        function declareWinner(player) {
+            winner = true;
+            alert(`Player ${player} wins!`);
+        }
+
+        function renderBoard() {
+            let boardHTML = document.getElementById('board');
+            for (let i = 0; i < 3; i++) {
+                for (let j = 0; j < 3; j++) {
+                    boardHTML.rows[i].cells[j].textContent = board[i][j];
+                }
+            }
+        }
+
+        function resetGame() {
+            turn = 'X';
+            winner = false;
+            board = [];
+            createBoard();
+        }
+      // ...
+
+      function botMove() {
+          // Implement a simple logic for the bot's move
+          // For example, you could choose a random available cell
+          let availableMoves = [];
+          for (let i = 0; i < 3; i++) {
+              for (let j = 0; j < 3; j++) {
+                  if (board[i][j] === '') {
+                      availableMoves.push({ row: i, col: j });
+                  }
+              }
+          }
+
+          // Choose a random available move
+          let randomIndex = Math.floor(Math.random() * availableMoves.length);
+          makeMove(availableMoves[randomIndex].row, availableMoves[randomIndex].col);
+      }
+
+      function makeMove(i, j) {
+          if (board[i][j] === '' && !winner) {
+              board[i][j] = turn;
+              renderBoard();
+              checkForWin();
+              if (!winner) {
+                  turn = turn === 'X' ? 'O' : 'X';
+                  if (turn === 'O') {
+                      botMove(); // If it's bot's turn, make a move
+                  }
+              }
+          }
+      }
+
+      // ...
+
+        window.onload = function() {
+            createBoard();
+        }
+    </script>
+</body>
+</html>
