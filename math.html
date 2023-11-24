@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Tools</title>
+    <link rel="stylesheet" type="text/css" href="subjects.css">
+</head>
+<body>
+ <a href="studytool.html" id="back"> <button onclick="goBack()">Go Back</button>
+ </a>
+
+  <!-- Your other body elements go here -->
+
+  <script>
+      function goBack() {
+          window.history.back();
+      }
+  </script>
+    <div class="container">
+        <h1>Math Tools</h1>
+        <ul>
+            <li><a href="tablecalc.html" onclick="openTableCalculator()">Multiplication Table Calculator</a></li>
+            <li><a href="square-cubecalc.html" onclick="openSquareCalculator()">Square Calculator</a></li>
+            <li><a href="square-cubecalc.html" onclick="openCubeCalculator()">Cube Calculator</a></li>
+          <li><a href="interestcalc.html" onclick="openInterestCalculator()">Simple and Compound Interest Calculator</a></li>
+          <li><a href="primecheck.html" onclick="openPrimenumberchecker()">Prime Number Checker</a></li>
+          <li><a href="mathformula.html" onclick="openMathFormula()">Math Formulae</a></li>
+            <!-- Add more math tools as needed -->
+        </ul>
+    </div>
+
+    <script src="math.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+/* Add your custom styles for current_status.css */
+
+body {
+    background: linear-gradient(to right, #4fabe8, #b86ad9); /* Gradient background effect */
+    color: #fff;
+}
+
+#splash-screen {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+header {
+    background-color: #3498db;
+    color: #fff;
+}
+
+nav {
+    background-color: #000;
+}
+
+nav a {
+    color: #fff;
+}
+
+#tuition-status {
+    color: #00ffff;
+}
+
+#countdown {
+    color: #ff00ff;
+}

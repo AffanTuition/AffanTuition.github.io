@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synonym Finder</title>
+    <link rel="stylesheet" type="text/css" href="synonym.css">
+</head>
+<body>
+    <div class="tool-container">
+        <h1>Synonym Finder</h1>
+        <label for="word">Enter a Word:</label>
+        <input type="text" id="word" placeholder="E.g., happy">
+
+        <button onclick="findSynonym()">Find Synonym</button>
+
+        <div id="result"></div>
+        <table id="SynonymTable">
+            <thead>
+                <tr>
+                    <th>Word</th>
+<th>Synonym</th>
+                </tr>
+            </thead>
+            <tbody id="SynonymBody">
+              <tr>
+                <td>Happy</td>
+                <td>Delightful</td>
+              </tr>
+              <tr>
+                <td>Brave</td>
+                <td>Courageous</td>
+              </tr>
+              <tr>
+                <td>Strong</td>
+                <td>Sturdy</td>
+              </tr>
+              <tr>
+                <td>Fast</td>
+                <td>Quick</td>
+              </tr>
+              <tr>
+                <td>Bright</td>
+                <td>Luminous</td>
+              </tr>
+              <tr>
+                <td>Large</td>
+                <td>Spacious</td>
+              </tr>
+              <tr>
+                <td>Angry</td>
+                <td>Irate</td>
+              </tr>
+              <tr>
+                <td>Kind</td>
+                <td>Compassionate</td>
+              </tr>
+              <tr>
+                <td>Beautiful</td>
+                <td>Gorgeous</td>
+              </tr>
+              <tr>
+                <td>Smart</td>
+                <td>Intelligent</td>
+              </tr>
+              <tr>
+                <td>Rich</td>
+                <td>Wealthy</td>
+              </tr>
+              <tr>
+                <td>Small</td>
+                <td>Petite</td>
+              </tr>
+              <tr>
+                <td>Difficult</td>
+                <td>Challenging</td>
+              </tr>
+              <tr>
+                <td>Happy</td>
+                <td>Joyful</td>
+              </tr>
+              <tr>
+                <td>Slow</td>
+                <td>Leisurely</td>
+              </tr>
+              <tr>
+                <td>Rich</td>
+                <td>Affluent</td>
+              </tr>
+              <tr>
+                <td>Happy</td>
+                <td>Content</td>
+              </tr>
+              <tr>
+                <td>Smart</td>
+                <td>Wise</td>
+              </tr>
+              <tr>
+                <td>Fast</td>
+                <td>Rapid</td>
+              </tr>
+              <tr>
+                <td>Kind</td>
+                <td>Considerate</td>
+              </tr>
+              <tr>
+                <td>Beautiful</td>
+                <td>Attractive</td>
+              </tr>
+              <tr>
+                <td>Brave</td>
+                <td>Fearless</td>
+              </tr>
+              <tr>
+                <td>Large</td>
+                <td>Immense</td>
+              </tr>
+              <tr>
+                <td>Small</td>
+                <td>Minuscule</td>
+              </tr>
+              <tr>
+                <td>Angry</td>
+                <td>Furious</td>
+              </tr>
+              <tr>
+                <td>Difficult</td>
+                <td>Complex</td>
+              </tr>
+              <tr>
+                <td>Happy</td>
+                <td>Euphoric</td>
+              </tr>
+              <tr>
+                <td>Strong</td>
+                <td>Robust</td>
+              </tr>
+              <tr>
+                <td>Quiet</td>
+                <td>Silent</td>
+              </tr>
+              <tr>
+                <td>Rich</td>
+                <td>Opulent</td>
+              </tr>
+              <tr>
+                <td>Fast</td>
+                <td>Swift</td>
+              </tr>
+              <tr>
+                <td>Kind</td>
+                <td>Amiable</td>
+              </tr>
+              <tr>
+                <td>Beautiful</td>
+                <td>Exquisite</td>
+              </tr>
+              <tr>
+                <td>Smart</td>
+                <td>Clever</td>
+              </tr>
+              <tr>
+                <td>Happy</td>
+                <td>Jovial</td>
+              </tr>
+              <tr>
+                <td>Happy</td>
+                <td>Elated</td>
+              </tr>
+              <tr>
+                <td>Smart</td>
+                <td>Intelligent</td>
+              </tr>
+              <tr>
+                <td>Rich</td>
+                <td>Wealthy</td>
+              </tr>
+              <tr>
+                <td>Brave</td>
+                <td>Valiant</td>
+              </tr>
+              <tr>
+                <td>Strong</td>
+                <td>Mighty</td>
+              </tr>
+              <tr>
+                <td>Beautiful</td>
+                <td>Ravishing</td>
+              </tr>
+              <tr>
+                <td>Small</td>
+                <td>Petite</td>
+              </tr>
+              <tr>
+                <td>Kind</td>
+                <td>Compassionate</td>
+              </tr>
+              <tr>
+                <td>Difficult</td>
+                <td>Challenging</td>
+              </tr>
+              <tr>
+                <td>Fast</td>
+                <td>Speedy</td>
+              </tr>
+              <tr>
+                <td>Angry</td>
+                <td>Furious</td>
+              </tr>
+              <tr>
+                <td>Happy</td>
+                <td>Joyful</td>
+              </tr>
+              <tr>
+                <td>Rich</td>
+                <td>Affluent</td>
+              </tr>
+              <tr>
+                <td>Smart</td>
+                <td>Wise</td>
+              </tr>
+              <tr>
+                <td>Fast</td>
+                <td>Rapid</td>
+              </tr>
+              <tr>
+                <td>Kind</td>
+                <td>Considerate</td>
+              </tr>
+              <tr>
+                <td>Beautiful</td>
+                <td>Attractive</td>
+              </tr>
+              <tr>
+                <td>Brave</td>
+                <td>Fearless</td>
+              </tr>
+              <tr>
+                <td>Large</td>
+                <td>Immense</td>
+              </tr>
+              <tr>
+                <td>Small</td>
+                <td>Minuscule</td>
+              </tr>
+              <tr>
+                <td>Happy</td>
+                <td>Blissful</td>
+              </tr>
+              <tr>
+                <td>Smart</td>
+                <td>Clever</td>
+              </tr>
+              <tr>
+                <td>Rich</td>
+                <td>Affluent</td>
+              </tr>
+              <tr>
+                <td>Brave</td>
+                <td>Fearless</td>
+              </tr>
+              <tr>
+                <td>Strong</td>
+                <td>Robust</td>
+              </tr>
+              <tr>
+                <td>Beautiful</td>
+                <td>Gorgeous</td>
+              </tr>
+              <tr>
+                <td>Small</td>
+                <td>Tiny</td>
+              </tr>
+              <tr>
+                <td>Kind</td>
+                <td>Generous</td>
+              </tr>
+              <tr>
+                <td>Difficult</td>
+                <td>Complicated</td>
+              </tr>
+              <tr>
+                <td>Fast</td>
+                <td>Speedy</td>
+              </tr>
+              <tr>
+                <td>Angry</td>
+                <td>Irate</td>
+              </tr>
+              <tr>
+                <td>Happy</td>
+                <td>Cheerful</td>
+              </tr>
+              <tr>
+                <td>Rich</td>
+                <td>Wealthy</td>
+              </tr>
+              <tr>
+                <td>Smart</td>
+                <td>Intelligent</td>
+              </tr>
+              <tr>
+                <td>Fast</td>
+                <td>Quick</td>
+              </tr>
+              <tr>
+                <td>Kind</td>
+                <td>Amiable</td>
+              </tr>
+              <tr>
+                <td>Beautiful</td>
+                <td>Elegant</td>
+              </tr>
+              <tr>
+                <td>Smart</td>
+                <td>Sharp</td>
+              </tr>
+              <tr>
+                <td>Happy</td>
+                <td>Exuberant</td>
+              </tr>
+              <tr>
+                <td>Difficult</td>
+                <td>Challenging</td>
+              </tr>
+              <tr>
+                <td>Happy</td>
+                <td>Joyful</td>
+              </tr>
+              <tr>
+                <td>Smart</td>
+                <td>Intelligent</td>
+              </tr>
+              <tr>
+                <td>Rich</td>
+                <td>Wealthy</td>
+              </tr>
+              <tr>
+                <td>Brave</td>
+                <td>Fearless</td>
+              </tr>
+              <tr>
+                <td>Strong</td>
+                <td>Sturdy</td>
+              </tr>
+              <tr>
+                <td>Beautiful</td>
+                <td>Exquisite</td>
+              </tr>
+              <tr>
+                <td>Small</td>
+                <td>Petite</td>
+              </tr>
+              <tr>
+                <td>Kind</td>
+                <td>Compassionate</td>
+              </tr>
+              <tr>
+                <td>Difficult</td>
+                <td>Challenging</td>
+              </tr>
+              <tr>
+                <td>Fast</td>
+                <td>Swift</td>
+              </tr>
+              <tr>
+                <td>Angry</td>
+                <td>Furious</td>
+              </tr>
+              <tr>
+                <td>Happy</td>
+                <td>Euphoric</td>
+              </tr>
+              <tr>
+                <td>Rich</td>
+                <td>Affluent</td>
+              </tr>
+              <tr>
+                <td>Smart</td>
+                <td>Wise</td>
+              </tr>
+              <tr>
+                <td>Fast</td>
+                <td>Rapid</td>
+              </tr>
+              <tr>
+                <td>Kind</td>
+                <td>Considerate</td>
+              </tr>
+              <tr>
+                <td>Beautiful</td>
+                <td>Attractive</td>
+              </tr>
+              <tr>
+                <td>Brave</td>
+                <td>Fearless</td>
+              </tr>
+              <tr>
+                <td>Large</td>
+                <td>Immense</td>
+              </tr>
+              <tr>
+                <td>Small</td>
+                <td>Minuscule</td>
+              </tr>
+              <tr>
+                <td>Happy</td>
+                <td>Jubilant</td>
+              </tr>
+              <tr>
+                <td>Smart</td>
+                <td>Clever</td>
+              </tr>
+              <tr>
+                <td>Rich</td>
+                <td>Affluent</td>
+              </tr>
+              <tr>
+                <td>Brave</td>
+                <td>Daring</td>
+              </tr>
+              <tr>
+                <td>Strong</td>
+                <td>Powerful</td>
+              </tr>
+              <tr>
+                <td>Beautiful</td>
+                <td>Ravishing</td>
+              </tr>
+              <tr>
+                <td>Small</td>
+                <td>Minuscule</td>
+              </tr>
+              <tr>
+                <td>Kind</td>
+                <td>Benevolent</td>
+              </tr>
+              <tr>
+                <td>Difficult</td>
+                <td>Challenging</td>
+              </tr>
+              <tr>
+                <td>Fast</td>
+                <td>Speedy</td>
+              </tr>
+              <tr>
+                <td>Angry</td>
+                <td>Irate</td>
+              </tr>
+              <tr>
+                <td>Happy</td>
+                <td>Cheerful</td>
+              </tr>
+              <tr>
+                <td>Rich</td>
+                <td>Wealthy</td>
+              </tr>
+              <tr>
+                <td>Smart</td>
+                <td>Intelligent</td>
+              </tr>
+              <tr>
+                <td>Fast</td>
+                <td>Quick</td>
+              </tr>
+              <tr>
+                <td>Kind</td>
+                <td>Amiable</td>
+              </tr>
+              <tr>
+                <td>Beautiful</td>
+                <td>Elegant</td>
+              </tr>
+              <tr>
+                <td>Smart</td>
+                <td>Sharp</td>
+              </tr>
+              <tr>
+                <td>Happy</td>
+                <td>Elated</td>
+              </tr>
+              <tr>
+                <td>Difficult</td>
+                <td>Complex</td>
+              </tr>
+              <tr>
+                <td>Sad</td>
+                <td>Melancholy</td>
+              </tr>
+              <tr>
+                <td>Clever</td>
+                <td>Astute</td>
+              </tr>
+              <tr>
+                <td>Wealthy</td>
+                <td>Prosperous</td>
+              </tr>
+              <tr>
+                <td>Daring</td>
+                <td>Adventurous</td>
+              </tr>
+              <tr>
+                <td>Powerful</td>
+                <td>Mighty</td>
+              </tr>
+              <tr>
+                <td>Ravishing</td>
+                <td>Alluring</td>
+              </tr>
+              <tr>
+                <td>Minuscule</td>
+                <td>Tiny</td>
+              </tr>
+              <tr>
+                <td>Benevolent</td>
+                <td>Kindhearted</td>
+              </tr>
+              <tr>
+                <td>Challenging</td>
+                <td>Daunting</td>
+              </tr>
+              <tr>
+                <td>Speedy</td>
+                <td>Swift</td>
+              </tr>
+              <tr>
+                <td>Irate</td>
+                <td>Infuriated</td>
+              </tr>
+              <tr>
+                <td>Cheerful</td>
+                <td>Merry</td>
+              </tr>
+              <tr>
+                <td>Wealthy</td>
+                <td>Affluent</td>
+              </tr>
+              <tr>
+                <td>Intelligent</td>
+                <td>Clever</td>
+              </tr>
+              <tr>
+                <td>Quick</td>
+                <td>Expeditious</td>
+              </tr>
+              <tr>
+                <td>Amiable</td>
+                <td>Friendly</td>
+              </tr>
+              <tr>
+                <td>Elegant</td>
+                <td>Graceful</td>
+              </tr>
+              <tr>
+                <td>Sharp</td>
+                <td>Astute</td>
+              </tr>
+              <tr>
+                <td>Elated</td>
+                <td>Ecstatic</td>
+              </tr>
+              <tr>
+                <td>Complex</td>
+                <td>Complicated</td>
+              </tr>
+              <tr>
+                <td>Melancholy</td>
+                <td>Sorrowful</td>
+              </tr>
+              <tr>
+                <td>Astute</td>
+                <td>Perceptive</td>
+              </tr>
+              <tr>
+                <td>Prosperous</td>
+                <td>Well-off</td>
+              </tr>
+              <tr>
+                <td>Adventurous</td>
+                <td>Daring</td>
+              </tr>
+              <tr>
+                <td>Mighty</td>
+                <td>Potent</td>
+              </tr>
+              <tr>
+                <td>Alluring</td>
+                <td>Enchanting</td>
+              </tr>
+              <tr>
+                <td>Tiny</td>
+                <td>Diminutive</td>
+              </tr>
+              <tr>
+                <td>Kindhearted</td>
+                <td>Benignant</td>
+              </tr>
+              <tr>
+                <td>Daunting</td>
+                <td>Formidable</td>
+              </tr>
+              <tr>
+                <td>Swift</td>
+                <td>Rapid</td>
+              </tr>
+              <tr>
+                <td>Infuriated</td>
+                <td>Angry</td>
+              </tr>
+              <tr>
+                <td>Merry</td>
+                <td>Joyful</td>
+              </tr>
+              <tr>
+                <td>Affluent</td>
+                <td>Opulent</td>
+              </tr>
+              <tr>
+                <td>Clever</td>
+                <td>Ingenious</td>
+              </tr>
+              <tr>
+                <td>Expeditious</td>
+                <td>Prompt</td>
+              </tr>
+              <tr>
+                <td>Friendly</td>
+                <td>Amicable</td>
+              </tr>
+              <tr>
+                <td>Graceful</td>
+                <td>Elegant</td>
+              </tr>
+              <tr>
+                <td>Astute</td>
+                <td>Sharp-witted</td>
+              </tr>
+              <tr>
+                <td>Ecstatic</td>
+                <td>Exultant</td>
+              </tr>
+              <tr>
+                <td>Complicated</td>
+                <td>Intricate</td>
+              </tr>
+              <tr>
+                <td>Sorrowful</td>
+                <td>Grief-stricken</td>
+              </tr>
+              <tr>
+                <td>Perceptive</td>
+                <td>Insightful</td>
+              </tr>
+              <tr>
+                <td>Well-off</td>
+                <td>Affluent</td>
+              </tr>
+              <tr>
+                <td>Daring</td>
+                <td>Bold</td>
+              </tr>
+              <tr>
+                <td>Potent</td>
+                <td>Forceful</td>
+              </tr>
+              <tr>
+                <td>Enchanting</td>
+                <td>Captivating</td>
+              </tr>
+              <tr>
+                <td>Diminutive</td>
+                <td>Petite</td>
+              </tr>
+              <tr>
+                <td>Benignant</td>
+                <td>Kind</td>
+              </tr>
+              <tr>
+                <td>Formidable</td>
+                <td>Intimidating</td>
+              </tr>
+              <tr>
+                <td>Rapid</td>
+                <td>Quick</td>
+              </tr>
+              <tr>
+                <td>Angry</td>
+                <td>Irate</td>
+              </tr>
+              <tr>
+                <td>Joyful</td>
+                <td>Cheerful</td>
+              </tr>
+              <tr>
+                <td>Opulent</td>
+                <td>Wealthy</td>
+              </tr>
+              <tr>
+                <td>Ingenious</td>
+                <td>Creative</td>
+              </tr>
+              <tr>
+                <td>Prompt</td>
+                <td>Speedy</td>
+              </tr>
+              <tr>
+                <td>Amicable</td>
+                <td>Friendly</td>
+              </tr>
+              <tr>
+                <td>Elegant</td>
+                <td>Refined</td>
+              </tr>
+              <tr>
+                <td>Sharp-witted</td>
+                <td>Astute</td>
+              </tr>
+              <tr>
+                <td>Exultant</td>
+                <td>Jubilant</td>
+              </tr>
+              <tr>
+                <td>Intricate</td>
+                <td>Complex</td>
+              </tr>
+              <tr>
+                <td>Grief-stricken</td>
+                <td>Mournful</td>
+              </tr>
+              <tr>
+                <td>Insightful</td>
+                <td>Perceptive</td>
+              </tr>
+              <tr>
+                <td>Affluent</td>
+                <td>Wealthy</td>
+              </tr>
+              <tr>
+                <td>Bold</td>
+                <td>Fearless</td>
+              </tr>
+              <tr>
+                <td>Forceful</td>
+                <td>Powerful</td>
+              </tr>
+              <tr>
+                <td>Captivating</td>
+                <td>Enthralling</td>
+              </tr>
+              <tr>
+                <td>Petite</td>
+                <td>Small</td>
+              </tr>
+              <tr>
+                <td>Kind</td>
+                <td>Generous</td>
+              </tr>
+              <tr>
+                <td>Intimidating</td>
+                <td>Menacing</td>
+              </tr>
+              <tr>
+                <td>Quick</td>
+                <td>Swift</td>
+              </tr>
+              <tr>
+                <td>Irate</td>
+                <td>Enraged</td>
+              </tr>
+              <tr>
+                <td>Cheerful</td>
+                <td>Jovial</td>
+              </tr>
+              <tr>
+                <td>Wealthy</td>
+                <td>Prosperous</td>
+              </tr>
+              <tr>
+                <td>Creative</td>
+                <td>Inventive</td>
+              </tr>
+              <tr>
+                <td>Speedy</td>
+                <td>Rapid</td>
+              </tr>
+              <tr>
+                <td>Friendly</td>
+                <td>Amiable</td>
+              </tr>
+              <tr>
+                <td>Refined</td>
+                <td>Elegant</td>
+              </tr>
+              <tr>
+                <td>Astute</td>
+                <td>Shrewd</td>
+              </tr>
+              <tr>
+                <td>Jubilant</td>
+                <td>Exuberant</td>
+              </tr>
+              <tr>
+                <td>Complex</td>
+                <td>Intricate</td>
+              </tr>
+              <tr>
+                <td>Mournful</td>
+                <td>Woeful</td>
+              </tr>
+              <tr>
+                <td>Perceptive</td>
+                <td>Keen</td>
+              </tr>
+              <tr>
+                <td>Wealthy</td>
+                <td>Rich</td>
+              </tr>
+              <tr>
+                <td>Fearless</td>
+                <td>Courageous</td>
+              </tr>
+              <tr>
+                <td>Powerful</td>
+                <td>Majestic</td>
+              </tr>
+              <tr>
+                <td>Enthralling</td>
+                <td>Fascinating</td>
+              </tr>
+              <tr>
+                <td>Small</td>
+                <td>Minute</td>
+              </tr>
+              <tr>
+                <td>Generous</td>
+                <td>Magnanimous</td>
+              </tr>
+              <tr>
+                <td>Menacing</td>
+                <td>Threatening</td>
+              </tr>
+              <tr>
+                <td>Swift</td>
+                <td>Brisk</td>
+              </tr>
+              <tr>
+                <td>Enraged</td>
+                <td>Infuriated</td>
+              </tr>
+              <tr>
+                <td>Jovial</td>
+                <td>Cheerful</td>
+              </tr>
+              <tr>
+                <td>Prosperous</td>
+                <td>Well-to-do</td>
+              </tr>
+              <tr>
+                <td>Inventive</td>
+                <td>Imaginative</td>
+              </tr>
+              <tr>
+                <td>Rapid</td>
+                <td>Speedy</td>
+              </tr>
+              <tr>
+                <td>Amiable</td>
+                <td>Genial</td>
+              </tr>
+              <tr>
+                <td>Elegant</td>
+                <td>Graceful</td>
+              </tr>
+              <tr>
+                <td>Shrewd</td>
+                <td>Discerning</td>
+              </tr>
+              <tr>
+                <td>Exuberant</td>
+                <td>Radiant</td>
+              </tr>
+              <tr>
+                <td>Intricate</td>
+                <td>Complicated</td>
+              </tr>
+              <tr>
+                <td>Woeful</td>
+                <td>Sorrowful</td>
+              </tr>
+              <tr>
+                <td>Keen</td>
+                <td>Observant</td>
+              </tr>
+              <tr>
+                <td>Rich</td>
+                <td>Affluent</td>
+              </tr>
+              <tr>
+                <td>Courageous</td>
+                <td>Fearless</td>
+              </tr>
+              <tr>
+                <td>Majestic</td>
+                <td>Noble</td>
+              </tr>
+
+              
+              
+          </tbody>
+        </table>
+    </div>
+  <style>
+    /* Reset some default styles for a cleaner look */
+    body, h1, h2, h3, p, ul, ol, li {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f8f9fa; /* Light gray background */
+        color: #333;
+        line-height: 1.6;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .tool-container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        margin: 20px auto; /* Center the container with a bit of spacing */
+        overflow: auto; /* Enable scrolling */
+    }
+
+    table {
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+        border-radius: 8px;
+        overflow: hidden; /* Hide overflowing borders */
+    }
+
+    th, td {
+        border: 1px solid #e2e6ea; /* Light gray border */
+        padding: 12px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f8f9fa; /* Light gray background for header */
+    }
+
+    /* Add some styling to headings for a modern look */
+    h1, h2, h3 {
+        color: #007bff; /* Blue color for headings */
+        margin-bottom: 20px;
+    }
+
+    /* Add subtle shadows to give elements depth */
+    .tool-container, table {
+        transition: box-shadow 0.3s ease;
+    }
+
+    .tool-container:hover, table:hover {
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Style links */
+    a {
+        color: #007bff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    a:hover {
+        color: #0056b3; /* Darker blue on hover */
+    }
+    #button{
+          background:#0d6efd;
+    outline:0;
+    margin-top:0.5rem;
+          text-align:center;
+          border-radius:15px;
+          height:3.5rem;
+          cursor:pointer;
+        }
+        button:hover{
+          background:#0759d3;
+        }
+
+  </style>
+  <script>
+     function findSynonym() {
+         const wordInput = document.getElementById('word').value;
+
+         // Implement logic to find synonyms here
+         const synonym = getSynonym(wordInput);
+
+         // Display the result
+         const resultContainer = document.getElementById('result');
+         if (synonym) {
+             resultContainer.innerHTML = `<p>Synonym of ${wordInput}: <strong>${synonym}</strong></p>`;
+         } else {
+             resultContainer.innerHTML = `<p>No synonym found for ${wordInput}.</p>`;
+         }
+     }
+
+     // Example function to get synonym (replace with actual logic)
+     function getSynonym(word) {
+         const synonyms = {
+             "happy": "joyful",
+             "sad": "melancholy",
+             "clever": "astute",
+             "wealthy": "rich",
+             "daring": "bold",
+             "powerful": "mighty",
+             "captivating": "enthralling",
+             "petite": "small",
+             "kindhearted": "generous",
+             "daunting": "formidable",
+             "swift": "rapid",
+             "irate": "enraged",
+             "cheerful": "jovial",
+             "opulent": "prosperous",
+             "creative": "inventive",
+             "speedy": "rapid",
+             "amicable": "friendly",
+             "refined": "elegant",
+             "astute": "shrewd",
+             "ecstatic": "exultant",
+             "complex": "intricate",
+             "sorrowful": "woeful",
+             "keen": "observant",
+             "rich": "affluent",
+             "courageous": "fearless",
+             "majestic": "noble",
+             "melancholy": "woeful",
+             "perceptive": "keen",
+             "well-off": "affluent",
+             "fearless": "courageous",
+             "mighty": "majestic",
+             "enthralling": "fascinating",
+             "small": "minute",
+             "generous": "magnanimous",
+             "menacing": "threatening",
+             "brisk": "swift",
+             "enraged": "infuriated",
+             "jovial": "cheerful",
+             "well-to-do": "prosperous",
+             "imaginative": "inventive",
+             "speedy": "rapid",
+             "genial": "amicable",
+             "graceful": "elegant",
+             "discerning": "shrewd",
+             "radiant": "exuberant",
+             "complicated": "intricate",
+             "woeful": "sorrowful",
+             "observant": "keen",
+             "affluent": "rich",
+             "fearless": "courageous",
+             "noble": "majestic",
+             "woeful": "sorrowful",
+             "observant": "keen",
+             "rich": "affluent",
+             "courageous": "fearless",
+             "majestic": "noble",
+             "mournful": "woeful",
+             "keen": "observant",
+             "rich": "affluent",
+             "bold": "daring",
+             "mighty": "powerful",
+             "enchanting": "captivating",
+             "tiny": "petite",
+             "generous": "kindhearted",
+             "threatening": "menacing",
+             "brisk": "swift",
+             "infuriated": "irate",
+             "cheerful": "jovial",
+             "well-to-do": "prosperous",
+             "creative": "imaginative",
+             "rapid": "speedy",
+             "friendly": "amicable",
+             "elegant": "refined",
+             "shrewd": "astute",
+             "exuberant": "ecstatic",
+             "intricate": "complex",
+             "sorrowful": "woeful",
+             "observant": "keen",
+             "affluent": "rich",
+             "courageous": "fearless",
+             "noble": "majestic",
+             "woeful": "sorrowful",
+             "keen": "observant",
+             "rich": "affluent",
+             "courageous": "fearless",
+             "majestic": "noble",
+           "enchanting": "captivating",
+           "tiny": "petite",
+           "generous": "kindhearted",
+           "threatening": "menacing",
+           "brisk": "swift",
+           "infuriated": "irate",
+           "cheerful": "jovial",
+           "well-to-do": "prosperous",
+           "creative": "imaginative",
+           "rapid": "speedy",
+           "friendly": "amicable",
+           "elegant": "refined",
+           "shrewd": "astute",
+           "exuberant": "ecstatic",
+           "intricate": "complex",
+           "woeful": "sorrowful",
+           "observant": "keen",
+           "affluent": "rich",
+           "courageous": "fearless",
+           "noble": "majestic",
+           "grief-stricken": "mournful",
+           "insightful": "perceptive",
+           "prosperous": "well-off",
+           "daring": "adventurous",
+           "mighty": "potent",
+           "captivating": "enchanting",
+           "diminutive": "tiny",
+           "kindhearted": "benignant",
+           "formidable": "intimidating",
+           "swift": "brisk",
+           "enraged": "infuriated",
+           "jovial": "cheerful",
+           "prosperous": "wealthy",
+           "intelligent": "clever",
+           "quick": "expeditious",
+           "friendly": "amiable",
+           "elegant": "graceful",
+           "sharp": "astute",
+           "elated": "ecstatic",
+           "complex": "intricate",
+           "sorrowful": "woeful",
+           "observant": "keen",
+           "affluent": "rich",
+           "fearless": "courageous",
+           "majestic": "noble",
+           "mournful": "woeful",
+           "perceptive": "keen",
+           "well-off": "affluent",
+           "fearless": "courageous",
+           "mighty": "majestic",
+           "fascinating": "enthralling",
+           "minute": "tiny",
+           "magnanimous": "generous",
+           "threatening": "menacing",
+           "swift": "brisk",
+           "infuriated": "angry",
+           "jovial": "cheerful",
+           "prosperous": "wealthy",
+           "inventive": "creative",
+           "rapid": "speedy",
+           "amicable": "friendly",
+           "refined": "elegant",
+           "astute": "shrewd",
+           "exuberant": "radiant",
+           "intricate": "complicated",
+           "melancholy": "woeful",
+           "observant": "keen",
+           "rich": "affluent",
+           "courageous": "fearless",
+           "noble": "majestic",
+           "woeful": "sorrowful",
+           "observant": "keen",
+           "affluent": "rich",
+           "courageous": "fearless",
+           "majestic": "noble",
+           "mournful": "woeful",
+           "keen": "observant",
+           "rich": "affluent",
+           "bold": "daring",
+           "mighty": "powerful",
+           "enthralling": "captivating",
+           "tiny": "petite",
+           "kindhearted": "generous",
+           "threatening": "menacing",
+           "brisk": "swift",
+           "infuriated": "irate",
+           "jovial": "cheerful",
+           "prosperous": "wealthy",
+           "inventive": "imaginative",
+           "rapid": "speedy",
+           "amicable": "friendly",
+           "elegant": "refined",
+           "shrewd": "astute",
+           "radiant": "exuberant",
+           "complicated": "intricate",
+           "sorrowful": "woeful",
+           "observant": "keen",
+           "affluent": "rich",
+           "courageous": "fearless",
+           "majestic": "noble",
+           "grief-stricken": "mournful",
+           "insightful": "perceptive",
+           "well-off": "prosperous",
+           "adventurous": "daring",
+           "forceful": "potent",
+           "enchanting": "captivating",
+           "diminutive": "tiny",
+           "benignant": "kindhearted",
+           "intimidating": "formidable",
+           "brisk": "swift",
+           "enraged": "infuriated",
+           "jovial": "cheerful",
+           "prosperous": "wealthy",
+           "imaginative": "creative",
+           "rapid": "speedy",
+           "friendly": "amicable",
+           "elegant": "refined",
+           "shrewd": "astute",
+           "radiant": "exuberant",
+           "complicated": "intricate",
+           "mournful": "woeful",
+           "keen": "observant",
+           "rich": "affluent",
+           "courageous": "fearless",
+           "noble": "majestic",
+           "woeful": "mournful",
+           "keen": "insightful",
+           "rich": "affluent",
+           "fearless": "courageous",
+           "majestic": "noble",
+           "mournful": "woeful",
+           "keen": "observant",
+           "rich": "affluent",
+           "bold": "daring",
+           "mighty": "powerful",
+           "enchanting": "captivating",
+           "tiny": "petite",
+           "kindhearted": "generous",
+           "threatening": "menacing",
+           "brisk": "swift",
+           "infuriated": "irate",
+           "jovial": "cheerful",
+           "prosperous": "wealthy",
+           "inventive": "imaginative",
+           "rapid": "speedy",
+           "amicable": "friendly",
+           "elegant": "refined",
+           "shrewd": "astute",
+           "radiant": "exuberant",
+           "complicated": "intricate",
+           "woeful": "sorrowful",
+           "observant": "keen",
+           "affluent": "rich",
+           "courageous": "fearless",
+           "noble": "majestic",
+           "woeful": "sorrowful",
+           "observant": "keen",
+           "affluent": "rich",
+           "courageous": "fearless",
+           "majestic": "noble",
+           "mournful": "woeful",
+           "keen": "observant",
+           "rich": "affluent",
+           "bold": "daring",
+           "mighty": "powerful",
+           "enthralling": "captivating",
+           "tiny": "petite",
+           "kindhearted": "generous",
+           "threatening": "menacing",
+           "brisk": "swift",
+           "infuriated": "irate",
+           "jovial": "cheerful",
+           "prosperous": "wealthy",
+           "inventive": "imaginative",
+           "rapid": "speedy",
+           "amicable": "friendly",
+           "elegant": "refined",
+           "shrewd": "astute",
+           "radiant": "exuberant",
+           "complex": "intricate"
+
+
+           
+             // Add more synonyms as needed
+         };
+
+         return synonyms[word.toLowerCase()] || null;
+     }
+
+
+    </script>
+</body>
+</html>

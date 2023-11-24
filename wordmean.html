@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meaning Finder</title>
+    <link rel="stylesheet" type="text/css" href="meaning.css">
+</head>
+<body>
+    <div class="tool-container">
+        <h1>Meaning Finder</h1>
+        <label for="word">Enter a Word:</label>
+        <input type="text" id="word" placeholder="Sorry,currently out of service !">
+
+        <button id="button" onclick="findMeaning()">Find Meaning</button>
+
+        <div id="result"></div>
+        <table id="MeaningTable">
+            <thead>
+                <tr>
+                    <th>Word</th>
+<th>Meaning</th>
+                  <th>Definition</th>
+                </tr>
+            </thead>
+            <tbody id=MeaningBody">
+              <tr>
+                  <td>Enthusiastic</td>
+                  <td>उत्साही</td>
+                  <td>Feeling or showing intense excitement and interest.</td>
+              </tr>
+              <tr>
+                  <td>Magnificent</td>
+                  <td>शानदार</td>
+                  <td>Grand or majestic in appearance; impressively beautiful, elaborate, or extravagant.</td>
+              </tr>
+              <tr>
+                  <td>Persistent</td>
+                  <td>सतत</td>
+                  <td>Continuing firmly or obstinately in a course of action in spite of difficulty or opposition.</td>
+              </tr>
+              <tr>
+                  <td>Serene</td>
+                  <td>शांत</td>
+                  <td>Calm, peaceful, and untroubled; tranquil.</td>
+              </tr>
+              <tr>
+                  <td>Adventurous</td>
+                  <td>साहसी</td>
+                  <td>Willing to take risks or to try out new methods, ideas, or experiences.</td>
+              </tr>
+              <tr>
+                  <td>Ponder</td>
+                  <td>विचार करना</td>
+                  <td>Think about (something) carefully, especially before making a decision or reaching a conclusion.</td>
+              </tr>
+              <tr>
+                  <td>Harmony</td>
+                  <td>सामंजस्य</td>
+                  <td>The state of forming a harmonious or consistent whole; agreement or concord.</td>
+              </tr>
+              <tr>
+                  <td>Eloquent</td>
+                  <td>वक्तृता से भरा हुआ</td>
+                  <td>Fluent or persuasive in speaking or writing.</td>
+              </tr>
+              <tr>
+                  <td>Resilient</td>
+                  <td>सहनशील</td>
+                  <td>Able to withstand or recover quickly from difficult conditions.</td>
+              </tr>
+              <tr>
+                  <td>Tranquil</td>
+                  <td>शांत</td>
+                  <td>Free from disturbance; calm.</td>
+              </tr>
+              <tr>
+                  <td>Innovative</td>
+                  <td>नवीन</td>
+                  <td>Featuring new methods; advanced and original in thinking.</td>
+              </tr>
+              <tr>
+                  <td>Inquisitive</td>
+                  <td>जिज्ञासु</td>
+                  <td>Eager to learn; curious or inquiring.</td>
+              </tr>
+              <tr>
+                  <td>Exuberant</td>
+                  <td>उत्साही</td>
+                  <td>Filled with or characterized by a lively energy and excitement.</td>
+              </tr>
+              <tr>
+                  <td>Prudent</td>
+                  <td>विवेकी</td>
+                  <td>Acting with or showing care and thought for the future.</td>
+              </tr>
+              <tr>
+                  <td>Empathetic</td>
+                  <td>सहानुभूतिशील</td>
+                  <td>Showing an ability to understand and share the feelings of another.</td>
+              </tr>
+              <tr>
+                  <td>Quixotic</td>
+                  <td>अव्यावसायिक</td>
+                  <td>Extremely idealistic, unrealistic, and impractical.</td>
+              </tr>
+              <tr>
+                  <td>Ubiquitous</td>
+                  <td>सर्वव्यापी</td>
+                  <td>Present, appearing, or found everywhere.</td>
+              </tr>
+              <tr>
+                  <td>Prolific</td>
+                  <td>उत्कृष्ट</td>
+                  <td>Producing a large amount of something, especially creatively.</td>
+              </tr>
+              <tr>
+                  <td>Empower</td>
+                  <td>सशक्त करना</td>
+                  <td>Give (someone) the authority or power to do something.</td>
+              </tr>
+              <tr>
+                  <td>Veracious</td>
+                  <td>सत्यपरायण</td>
+                  <td>Speaking or representing the truth.</td>
+              </tr>
+              <tr>
+                  <td>Innovative</td>
+                  <td>नवीन</td>
+                  <td>Featuring new methods; advanced and original in thinking.</td>
+              </tr>
+              <tr>
+                  <td>Inquisitive</td>
+                  <td>जिज्ञासु</td>
+                  <td>Eager to learn; curious or inquiring.</td>
+              </tr>
+              <tr>
+                  <td>Exuberant</td>
+                  <td>उत्साही</td>
+                  <td>Filled with or characterized by a lively energy and excitement.</td>
+              </tr>
+              <tr>
+                  <td>Prudent</td>
+                  <td>विवेकी</td>
+                  <td>Acting with or showing care and thought for the future.</td>
+              </tr>
+              <tr>
+                  <td>Empathetic</td>
+                  <td>सहानुभूतिशील</td>
+                  <td>Showing an ability to understand and share the feelings of another.</td>
+              </tr>
+              <tr>
+                  <td>Quixotic</td>
+                  <td>अव्यावसायिक</td>
+                  <td>Extremely idealistic, unrealistic, and impractical.</td>
+              </tr>
+              <tr>
+                  <td>Ubiquitous</td>
+                  <td>सर्वव्यापी</td>
+                  <td>Present, appearing, or found everywhere.</td>
+              </tr>
+              <tr>
+                  <td>Prolific</td>
+                  <td>उत्कृष्ट</td>
+                  <td>Producing a large amount of something, especially creatively.</td>
+              </tr>
+              <tr>
+                  <td>Empower</td>
+                  <td>सशक्त करना</td>
+                  <td>Give (someone) the authority or power to do something.</td>
+              </tr>
+              <tr>
+                  <td>Veracious</td>
+                  <td>सत्यपरायण</td>
+                  <td>Speaking or representing the truth.</td>
+              </tr>
+              <tr>
+                  <td>Effervescent</td>
+                  <td>उबालू</td>
+                  <td>Bubbly, lively, and full of high spirits.</td>
+              </tr>
+              <tr>
+                  <td>Conscientious</td>
+                  <td>ईमानदार</td>
+                  <td>Wishing to do what is right, especially to do one's work or duty well and thoroughly.</td>
+              </tr>
+              <tr>
+                  <td>Vibrant</td>
+                  <td>जीवंत</td>
+                  <td>Full of energy and enthusiasm; lively.</td>
+              </tr>
+              <tr>
+                  <td>Resolute</td>
+                  <td>निश्चित</td>
+                  <td>Determined and unwavering; admirably purposeful.</td>
+              </tr>
+              <tr>
+                  <td>Exquisite</td>
+                  <td>उत्कृष्ट</td>
+                  <td>Extremely beautiful and delicate; intensely pleasing.</td>
+              </tr>
+              <tr>
+                  <td>Adaptable</td>
+                  <td>अनुकूलनशील</td>
+                  <td>Capable of adjusting to new conditions; flexible.</td>
+              </tr>
+              <tr>
+                  <td>Enigmatic</td>
+                  <td>रहस्यमय</td>
+                  <td>Difficult to interpret or understand; mysterious.</td>
+              </tr>
+              <tr>
+                  <td>Diligent</td>
+                  <td>मेहनती</td>
+                  <td>Characterized by steady, earnest, and energetic effort; hardworking.</td>
+              </tr>
+              <tr>
+                  <td>Profound</td>
+                  <td>गहिरा</td>
+                  <td>Having deep meaning; showing intellectual depth.</td>
+              </tr>
+              <tr>
+                  <td>Eloquent</td>
+                  <td>वक्तृता से भरा हुआ</td>
+                  <td>Fluent or persuasive in speaking or writing.</td>
+              </tr>
+              <tr>
+                  <td>Resilient</td>
+                  <td>सहनशील</td>
+                  <td>Able to withstand or recover quickly from difficult conditions.</td>
+              </tr>
+              <tr>
+                  <td>Tranquil</td>
+                  <td>शांत</td>
+                  <td>Free from disturbance; calm.</td>
+              </tr>
+              <tr>
+                  <td>Innovative</td>
+                  <td>नवीन</td>
+                  <td>Featuring new methods; advanced and original in thinking.</td>
+              </tr>
+              <tr>
+                  <td>Inquisitive</td>
+                  <td>जिज्ञासु</td>
+                  <td>Eager to learn; curious or inquiring.</td>
+              </tr>
+              <tr>
+                  <td>Exuberant</td>
+                  <td>उत्साही</td>
+                  <td>Filled with or characterized by a lively energy and excitement.</td>
+              </tr>
+              <tr>
+                  <td>Prudent</td>
+                  <td>विवेकी</td>
+                  <td>Acting with or showing care and thought for the future.</td>
+              </tr>
+              <tr>
+                  <td>Empathetic</td>
+                  <td>सहानुभूतिशील</td>
+                  <td>Showing an ability to understand and share the feelings of another.</td>
+              </tr>
+              <tr>
+                  <td>Quixotic</td>
+                  <td>अव्यावसायिक</td>
+                  <td>Extremely idealistic, unrealistic, and impractical.</td>
+              </tr>
+              <tr>
+                  <td>Ubiquitous</td>
+                  <td>सर्वव्यापी</td>
+                  <td>Present, appearing, or found everywhere.</td>
+              </tr>
+              <tr>
+                  <td>Prolific</td>
+                  <td>उत्कृष्ट</td>
+                  <td>Producing a large amount of something, especially creatively.</td>
+              </tr>
+              <tr>
+                  <td>Empower</td>
+                  <td>सशक्त करना</td>
+                  <td>Give (someone) the authority or power to do something.</td>
+              </tr>
+              <tr>
+                  <td>Veracious</td>
+                  <td>सत्यपरायण</td>
+                  <td>Speaking or representing the truth.</td>
+              </tr>
+              <tr>
+                  <td>Effervescent</td>
+                  <td>उबालू</td>
+                  <td>Bubbly, lively, and full of high spirits.</td>
+              </tr>
+              <tr>
+                  <td>Conscientious</td>
+                  <td>ईमानदार</td>
+                  <td>Wishing to do what is right, especially to do one's work or duty well and thoroughly.</td>
+              </tr>
+              <tr>
+                  <td>Vibrant</td>
+                  <td>जीवंत</td>
+                  <td>Full of energy and enthusiasm; lively.</td>
+              </tr>
+              <tr>
+                  <td>Resolute</td>
+                  <td>निश्चित</td>
+                  <td>Determined and unwavering; admirably purposeful.</td>
+              </tr>
+              <tr>
+                  <td>Exquisite</td>
+                  <td>उत्कृष्ट</td>
+                  <td>Extremely beautiful and delicate; intensely pleasing.</td>
+              </tr>
+              <tr>
+                  <td>Adaptable</td>
+                  <td>अनुकूलनशील</td>
+                  <td>Capable of adjusting to new conditions; flexible.</td>
+              </tr>
+              <tr>
+                  <td>Enigmatic</td>
+                  <td>रहस्यमय</td>
+                  <td>Difficult to interpret or understand; mysterious.</td>
+              </tr>
+              <tr>
+                  <td>Diligent</td>
+                  <td>मेहनती</td>
+                  <td>Characterized by steady, earnest, and energetic effort; hardworking.</td>
+              </tr>
+              <tr>
+                  <td>Profound</td>
+                  <td>गहिरा</td>
+                  <td>Having deep meaning; showing intellectual depth.</td>
+              </tr>
+              <tr>
+                  <td>Eloquent</td>
+                  <td>वक्तृता से भरा हुआ</td>
+                  <td>Fluent or persuasive in speaking or writing.</td>
+              </tr>
+              <tr>
+                  <td>Effervescent</td>
+                  <td>उबालू</td>
+                  <td>Bubbly, lively, and full of high spirits.</td>
+              </tr>
+              <tr>
+                  <td>Conscientious</td>
+                  <td>ईमानदार</td>
+                  <td>Wishing to do what is right, especially to do one's work or duty well and thoroughly.</td>
+              </tr>
+              <tr>
+                  <td>Vibrant</td>
+                  <td>जीवंत</td>
+                  <td>Full of energy and enthusiasm; lively.</td>
+              </tr>
+              <tr>
+                  <td>Resolute</td>
+                  <td>निश्चित</td>
+                  <td>Determined and unwavering; admirably purposeful.</td>
+              </tr>
+              <tr>
+                  <td>Exquisite</td>
+                  <td>उत्कृष्ट</td>
+                  <td>Extremely beautiful and delicate; intensely pleasing.</td>
+              </tr>
+              <tr>
+                  <td>Adaptable</td>
+                  <td>अनुकूलनशील</td>
+                  <td>Capable of adjusting to new conditions; flexible.</td>
+              </tr>
+              <tr>
+                  <td>Enigmatic</td>
+                  <td>रहस्यमय</td>
+                  <td>Difficult to interpret or understand; mysterious.</td>
+              </tr>
+              <tr>
+                  <td>Diligent</td>
+                  <td>मेहनती</td>
+                  <td>Characterized by steady, earnest, and energetic effort; hardworking.</td>
+              </tr>
+              <tr>
+                  <td>Mellifluous</td>
+                  <td>मधुर</td>
+                  <td>Sweet or musical; pleasant to hear.</td>
+              </tr>
+              <tr>
+                  <td>Ubiquitous</td>
+                  <td>सर्वव्यापी</td>
+                  <td>Present, appearing, or found everywhere.</td>
+              </tr>
+              <tr>
+                  <td>Procrastinate</td>
+                  <td>तालमेल करना</td>
+                  <td>Delay or postpone action; put off doing something.</td>
+              </tr>
+              <tr>
+                  <td>Incandescent</td>
+                  <td>तेजी से तप्त</td>
+                  <td>Producing a bright light from a heated filament or other part.</td>
+              </tr>
+              <tr>
+                  <td>Zealous</td>
+                  <td>उत्साही</td>
+                  <td>Filled with zeal; passionate, fervent, or enthusiastic.</td>
+              </tr>
+              <tr>
+                  <td>Impeccable</td>
+                  <td>निर्दोष</td>
+                  <td>Free from fault or error; flawless or perfect.</td>
+              </tr>
+              <tr>
+                  <td>Jubilant</td>
+                  <td>खुशियों से भरा हुआ</td>
+                  <td>Feeling or expressing great joy; rejoicing.</td>
+              </tr>
+              <tr>
+                  <td>Immutable</td>
+                  <td>अविकारी</td>
+                  <td>Unchanging over time; unalterable.</td>
+              </tr>
+              <tr>
+                  <td>Exemplary</td>
+                  <td>उदाहरणीय</td>
+                  <td>Worthy of imitation; serving as a model or example.</td>
+              </tr>
+              <tr>
+                  <td>Harmonious</td>
+                  <td>सामंजस्यपूर्ण</td>
+                  <td>Forming a harmonious or consistent whole; balanced and orderly.</td>
+              </tr>
+              <tr>
+                  <td>Mellifluous</td>
+                  <td>मधुर</td>
+                  <td>Sweet or musical; pleasant to hear.</td>
+              </tr>
+              <tr>
+                  <td>Ubiquitous</td>
+                  <td>सर्वव्यापी</td>
+                  <td>Present, appearing, or found everywhere.</td>
+              </tr>
+              <tr>
+                  <td>Procrastinate</td>
+                  <td>तालमेल करना</td>
+                  <td>Delay or postpone action; put off doing something.</td>
+              </tr>
+              <tr>
+                  <td>Incandescent</td>
+                  <td>तेजी से तप्त</td>
+                  <td>Producing a bright light from a heated filament or other part.</td>
+              </tr>
+              <tr>
+                  <td>Zealous</td>
+                  <td>उत्साही</td>
+                  <td>Filled with zeal; passionate, fervent, or enthusiastic.</td>
+              </tr>
+              <tr>
+                  <td>Impeccable</td>
+                  <td>निर्दोष</td>
+                  <td>Free from fault or error; flawless or perfect.</td>
+              </tr>
+              <tr>
+                  <td>Jubilant</td>
+                  <td>खुशियों से भरा हुआ</td>
+                  <td>Feeling or expressing great joy; rejoicing.</td>
+              </tr>
+              <tr>
+                  <td>Immutable</td>
+                  <td>अविकारी</td>
+                  <td>Unchanging over time; unalterable.</td>
+              </tr>
+              <tr>
+                  <td>Exemplary</td>
+                  <td>उदाहरणीय</td>
+                  <td>Worthy of imitation; serving as a model or example.</td>
+              </tr>
+              <tr>
+                  <td>Harmonious</td>
+                  <td>सामंजस्यपूर्ण</td>
+                  <td>Forming a harmonious or consistent whole; balanced and orderly.</td>
+              </tr>
+              <tr>
+                  <td>Reticent</td>
+                  <td>अल्पभाषी</td>
+                  <td>Not revealing one's thoughts or feelings readily; reserved.</td>
+              </tr>
+              <tr>
+                  <td>Ineffable</td>
+                  <td>अवचनीय</td>
+                  <td>Too great or extreme to be expressed or described in words.</td>
+              </tr>
+              <tr>
+                  <td>Voracious</td>
+                  <td>अत्यंत लालसी</td>
+                  <td>Wanting or devouring great quantities of food; having a very eager approach to a particular activity.</td>
+              </tr>
+              <tr>
+                  <td>Ephemeral</td>
+                  <td>क्षणभंगुर</td>
+                  <td>Lasting for a very short time; transient.</td>
+              </tr>
+              <tr>
+                  <td>Ubiquity</td>
+                  <td>सर्वव्यापकता</td>
+                  <td>The state of being everywhere at once; omnipresence.</td>
+              </tr>
+              <tr>
+                  <td>Sagacious</td>
+                  <td>बुद्धिमान</td>
+                  <td>Having or showing keen mental discernment and good judgment; shrewd.</td>
+              </tr>
+              <tr>
+                  <td>Panacea</td>
+                  <td>सर्वबीजग्रन्थि</td>
+                  <td>A solution or remedy for all difficulties or diseases; a universal cure.</td>
+              </tr>
+              <tr>
+                  <td>Disparate</td>
+                  <td>विभिन्न</td>
+                  <td>Essentially different in kind; not allowing comparison.</td>
+              </tr>
+              <tr>
+                  <td>Esoteric</td>
+                  <td>रहस्यमय</td>
+                  <td>Intended for or understood by only a small number of people with special knowledge; mysterious.</td>
+              </tr>
+              <tr>
+                  <td>Munificent</td>
+                  <td>उदार</td>
+                  <td>More generous than is usual or necessary; extremely liberal.</td>
+              </tr>
+              <tr>
+                  <td>Illuminate</td>
+                  <td>रौंकना</td>
+                  <td>Light up; make brighter or clearer.</td>
+              </tr>
+              <tr>
+                  <td>Cacophony</td>
+                  <td>कर्णाटक</td>
+                  <td>A harsh, discordant mixture of sounds.</td>
+              </tr>
+              <tr>
+                  <td>Elusive</td>
+                  <td>अप्राप्त्य</td>
+                  <td>Difficult to find, catch, or achieve.</td>
+              </tr>
+              <tr>
+                  <td>Obsolete</td>
+                  <td>पुराना</td>
+                  <td>No longer produced or used; out of date.</td>
+              </tr>
+              <tr>
+                  <td>Benevolent</td>
+                  <td>दयालु</td>
+                  <td>Well-meaning and kindly.</td>
+              </tr>
+              <tr>
+                  <td>Ubiquitous</td>
+                  <td>सर्वव्यापी</td>
+                  <td>Present, appearing, or found everywhere.</td>
+              </tr>
+              <tr>
+                  <td>Serendipity</td>
+                  <td>आनंदित योजना</td>
+                  <td>The occurrence and development of events by chance in a happy or beneficial way.</td>
+              </tr>
+              <tr>
+                  <td>Mundane</td>
+                  <td>सामान्य</td>
+                  <td>Lacking interest or excitement; dull.</td>
+              </tr>
+              <tr>
+                  <td>Quintessential</td>
+                  <td>सारग्राही</td>
+                  <td>Representing the most perfect or typical example of a quality or class.</td>
+              </tr>
+              <tr>
+                  <td>Nefarious</td>
+                  <td>दुष्ट</td>
+                  <td>(typically of an action or activity) Wicked, villainous, or criminal.</td>
+              </tr>
+              <tr>
+                  <td>Ephemeral</td>
+                  <td>क्षणभंगुर</td>
+                  <td>Lasting for a very short time; transient.</td>
+              </tr>
+              <tr>
+                  <td>Supine</td>
+                  <td>लेटा हुआ</td>
+                  <td>Lying face upward.</td>
+              </tr>
+              <tr>
+                  <td>Ambiguous</td>
+                  <td>अनेकार्थक</td>
+                  <td>Open to more than one interpretation; having a double meaning.</td>
+              </tr>
+              <tr>
+                  <td>Precarious</td>
+                  <td>अनिश्चित</td>
+                  <td>Not securely held or in position; dangerously likely to fall or collapse.</td>
+              </tr>
+              <tr>
+                  <td>Prolific</td>
+                  <td>उत्कृष्ट</td>
+                  <td>Producing a large amount of something, especially creatively.</td>
+              </tr>
+              <tr>
+                  <td>Pernicious</td>
+                  <td>हानिकारक</td>
+                  <td>Having a harmful effect, especially in a gradual or subtle way.</td>
+              </tr>
+              <tr>
+                  <td>Meticulous</td>
+                  <td>बहुत ध्यान से</td>
+                  <td>Showing great attention to detail; very careful and precise.</td>
+              </tr>
+              <tr>
+                  <td>Conundrum</td>
+                  <td>समस्या</td>
+                  <td>A confusing and difficult problem or question.</td>
+              </tr>
+              <tr>
+                  <td>Esoteric</td>
+                  <td>रहस्यमय</td>
+                  <td>Intended for or understood by only a small number of people with special knowledge; mysterious.</td>
+              </tr>
+              <tr>
+                  <td>Capitulate</td>
+                  <td>हार मान लेना</td>
+                  <td>Cease to resist an opponent or an unwelcome demand; surrender.</td>
+              </tr>
+              <tr>
+                  <td>Ubiquity</td>
+                  <td>सर्वव्यापकता</td>
+                  <td>The state of being everywhere at once; omnipresence.</td>
+              </tr>
+              <tr>
+                  <td>Sycophant</td>
+                  <td>चापलूस</td>
+                  <td>A person who acts obsequiously towards someone important in order to gain advantage.</td>
+              </tr>
+              <tr>
+                  <td>Esoteric</td>
+                  <td>रहस्यमय</td>
+                  <td>Intended for or understood by only a small number of people with special knowledge; mysterious.</td>
+              </tr>
+              <tr>
+                  <td>Disparate</td>
+                  <td>विभिन्न</td>
+                  <td>Essentially different in kind; not allowing comparison.</td>
+              </tr>
+              <tr>
+                  <td>Denigrate</td>
+                  <td>अपमानित करना</td>
+                  <td>Criticize unfairly; disparage.</td>
+              </tr>
+              <tr>
+                  <td>Myriad</td>
+                  <td>अनगिनत</td>
+                  <td>A countless or extremely great number.</td>
+              </tr>
+              <tr>
+                  <td>Nefarious</td>
+                  <td>दुष्ट</td>
+                  <td>(typically of an action or activity) Wicked, villainous, or criminal.</td>
+              </tr>
+              <tr>
+                  <td>Ephemeral</td>
+                  <td>क्षणभंगुर</td>
+                  <td>Lasting for a very short time; transient.</td>
+              </tr>
+              <tr>
+                  <td>Penultimate</td>
+                  <td>अंतिम से पहले का</td>
+                  <td>Second to last in a series of things; second to the end.</td>
+              </tr>
+              <tr>
+                  <td>Quintessential</td>
+                  <td>सारग्राही</td>
+                  <td>Representing the most perfect or typical example of a quality or class.</td>
+              </tr>
+              <tr>
+                  <td>Insidious</td>
+                  <td>कपटपूर्ण</td>
+                  <td>Proceeding in a gradual, subtle way, but with harmful effects.</td>
+              </tr>
+              <tr>
+                  <td>Pristine</td>
+                  <td>निर्मल</td>
+                  <td>In its original condition; unspoiled.</td>
+              </tr>
+              <tr>
+                  <td>Quixotic</td>
+                  <td>अव्यावसायिक</td>
+                  <td>Extremely idealistic, unrealistic, and impractical.</td>
+              </tr>
+              <tr>
+                  <td>Salient</td>
+                  <td>मुख्य</td>
+                  <td>Most noticeable or important.</td>
+              </tr>
+              <tr>
+                  <td>Voracious</td>
+                  <td>अत्यंत लालसी</td>
+                  <td>Wanting or devouring great quantities of food; having a very eager approach to a particular activity.</td>
+              </tr>
+              <tr>
+                  <td>Alacrity</td>
+                  <td>तत्परता</td>
+                  <td>Brisk and cheerful readiness; eagerness.</td>
+              </tr>
+              <tr>
+                  <td>Confluence</td>
+                  <td>संगम</td>
+                  <td>The junction of two rivers, especially rivers of approximately equal width.</td>
+              </tr>
+              <tr>
+                  <td>Pernicious</td>
+                  <td>हानिकारक</td>
+                  <td>Having a harmful effect, especially in a gradual or subtle way.</td>
+              </tr>
+              <tr>
+                  <td>Ubiquitous</td>
+                  <td>सर्वव्यापी</td>
+                  <td>Present, appearing, or found everywhere.</td>
+              </tr>
+              <tr>
+                  <td>Cacophony</td>
+                  <td>कर्णाटक</td>
+                  <td>A harsh, discordant mixture of sounds.</td>
+              </tr>
+              <tr>
+                  <td>Precarious</td>
+                  <td>अनिश्चित</td>
+                  <td>Not securely held or in position; dangerously likely to fall or collapse.</td>
+              </tr>
+              <tr>
+                  <td>Conundrum</td>
+                  <td>समस्या</td>
+                  <td>A confusing and difficult problem or question.</td>
+              </tr>
+              <tr>
+                  <td>Esoteric</td>
+                  <td>रहस्यमय</td>
+                  <td>Intended for or understood by only a small number of people with special knowledge; mysterious.</td>
+              </tr>
+              <tr>
+                  <td>Ubiquitous</td>
+                  <td>सर्वव्यापी</td>
+                  <td>Present, appearing, or found everywhere.</td>
+              </tr>
+              <tr>
+                  <td>Ephemeral</td>
+                  <td>क्षणभंगुर</td>
+                  <td>Lasting for a very short time; transient.</td>
+              </tr>
+              <tr>
+                  <td>Denigrate</td>
+                  <td>अपमानित करना</td>
+                  <td>Criticize unfairly; disparage.</td>
+              </tr>
+              <tr>
+                  <td>Myriad</td>
+                  <td>अनगिनत</td>
+                  <td>A countless or extremely great number.</td>
+              </tr>
+              <tr>
+                  <td>Nefarious</td>
+                  <td>दुष्ट</td>
+                  <td>(typically of an action or activity) Wicked, villainous, or criminal.</td>
+              </tr>
+              <tr>
+                  <td>Pernicious</td>
+                  <td>हानिकारक</td>
+                  <td>Having a harmful effect, especially in a gradual or subtle way.</td>
+              </tr>
+              <tr>
+                  <td>Voracious</td>
+                  <td>अत्यंत लालसी</td>
+                  <td>Wanting or devouring great quantities of food; having a very eager approach to a particular activity.</td>
+              </tr>
+              <tr>
+                  <td>Alacrity</td>
+                  <td>तत्परता</td>
+                  <td>Brisk and cheerful readiness; eagerness.</td>
+              </tr>
+              <tr>
+                  <td>Munificent</td>
+                  <td>उदार</td>
+                  <td>More generous than is usual or necessary; extremely liberal.</td>
+              </tr>
+              <tr>
+                  <td>Obfuscate</td>
+                  <td>संदेहजनक बनाना</td>
+                  <td>Render obscure, unclear, or unintelligible.</td>
+              </tr>
+              <tr>
+                  <td>Salient</td>
+                  <td>मुख्य</td>
+                  <td>Most noticeable or important.</td>
+              </tr>
+              <tr>
+                  <td>Elucidate</td>
+                  <td>स्पष्ट करना</td>
+                  <td>Make (something) clear; explain.</td>
+              </tr>
+              <tr>
+                  <td>Verbose</td>
+                  <td>बहुवाक्य</td>
+                  <td>Using or expressed in more words than are needed.</td>
+              </tr>
+              <tr>
+                  <td>Pervasive</td>
+                  <td>सर्वव्यापी</td>
+                  <td>Spread throughout.</td>
+              </tr>
+              <tr>
+                  <td>Voracious</td>
+                  <td>अत्यंत लालसी</td>
+                  <td>Wanting or devouring great quantities of food; having a very eager approach to a particular activity.</td>
+              </tr>
+              <tr>
+                  <td>Conflate</td>
+                  <td>मिलाना</td>
+                  <td>Combine (two or more texts, ideas, etc.) into one.</td>
+              </tr>
+              <tr>
+                  <td>Cacophony</td>
+                  <td>कर्णाटक</td>
+                  <td>A harsh, discordant mixture of sounds.</td>
+              </tr>
+
+              
+            </tbody>
+        </table>
+    </div>
+  <style>
+    /* Reset some default styles for a cleaner look */
+    body, h1, h2, h3, p, ul, ol, li {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f8f9fa; /* Light gray background */
+        color: #333;
+        line-height: 1.6;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .tool-container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        margin: 20px auto; /* Center the container with a bit of spacing */
+        overflow: auto; /* Enable scrolling */
+    }
+    #button{
+      background:#0d6efd;
+outline:0;
+margin-top:0.5rem;
+      text-align:center;
+      border-radius:15px;
+      height:3.5rem;
+      cursor:pointer;
+    }
+    button:hover{
+      background:#0759d3;
+    }
+
+    table {
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+        border-radius: 8px;
+        overflow: hidden; /* Hide overflowing borders */
+    }
+
+    th, td {
+        border: 1px solid #e2e6ea; /* Light gray border */
+        padding: 12px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f8f9fa; /* Light gray background for header */
+        }
+
+        .tool-container:hover, table:hover {
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Style links */
+        a {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #0056b3; /* Darker blue on hover */
+        }
+    
+      body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        color: #333;
+      }
+
+      .tool-container {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        max-width: 600px;
+        margin: 20px auto;
+        overflow: auto;
+      }
+
+      table {
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+      }
+
+      th, td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+        background-color: #f2f2f2;
+      }
+
+      th {
+        font-weight: bold;
+      }
+
+      h2 {
+        color: #4CAF50;
+      }
+
+      p {
+        margin-bottom: 20px;
+      }
+    
+
+
+      </style>
+  <script>
+     
+         
+
+
+
+     // Example function to get synonym (replace with actual logic)
+     function getMeaning(word) {
+         const meaning = {
+             "Sycophant": "चापलूस - A person who acts obsequiously towards someone important in order to gain advantage.",
+             "Elusive": "अप्राप्त्य - Difficult to find, catch, or achieve.",
+             "Obsolete": "पुराना - No longer produced or used; out of date.",
+             "Benevolent": "दयालु - Well-meaning and kindly.",
+             "Serendipity": "आनंदित योजना - The occurrence and development of events by chance in a happy or beneficial way.",
+             "Mundane": "सामान्य - Lacking interest or excitement; dull.",
+             "Illuminate": "रौंकना - Light up; make brighter or clearer.",
+             "Supine": "लेटा हुआ - Lying face upward.",
+             "Ambiguous": "अनेकार्थक - Open to more than one interpretation; having a double meaning.",
+             "Ineffable": "अवचनीय - Too great or extreme to be expressed or described in words.",
+             "Sagacious": "बुद्धिमान - Having or showing keen mental discernment and good judgment; shrewd.",
+             "Panacea": "सर्वबीजग्रन्थि - A solution or remedy for all difficulties or diseases; a universal cure.",
+             "Disparate": "विभिन्न - Essentially different in kind; not allowing comparison.",
+             "Illuminate": "रौंकना - Light up; make brighter or clearer.",
+             "Insidious": "कपटपूर्ण - Proceeding in a gradual, subtle way, but with harmful effects.",
+             "Pristine": "निर्मल - In its original condition; unspoiled.",
+             "Quixotic": "अव्यावसायिक - Extremely idealistic, unrealistic, and impractical.",
+             "Salient": "मुख्य - Most noticeable or important.",
+             "Voracious": "अत्यंत लालसी - Wanting or devouring great quantities of food; having a very eager approach to a particular activity.",
+             "Conundrum": "समस्या - A confusing and difficult problem or question.",
+             "Esoteric": "रहस्यमय - Intended for or understood by only a small number of people with special knowledge; mysterious.",
+             "Ubiquitous": "सर्वव्यापी - Present, appearing, or found everywhere.",
+             "Ephemeral": "क्षणभंगुर - Lasting for a very short time; transient.",
+             "Penultimate": "अंतिम से पहले का - Second to last in a series of things; second to the end.",
+             "Quintessential": "सारग्राही - Representing the most perfect or typical example of a quality or class.",
+             "Insidious": "कपटपूर्ण - Proceeding in a gradual, subtle way, but with harmful effects.",
+             "Pristine": "निर्मल - In its original condition; unspoiled.",
+             "Quixotic": "अव्यावसायिक - Extremely idealistic, unrealistic, and impractical.",
+             "Salient": "मुख्य - Most noticeable or important.",
+             "Voracious": "अत्यंत लालसी - Wanting or devouring great quantities of food; having a very eager approach to a particular activity.",
+             "Alacrity": "तत्परता - Brisk and cheerful readiness; eagerness.",
+             "Confluence": "संगम - The junction of two rivers, especially rivers of approximately equal width.",
+             "Pernicious": "हानिकारक - Having a harmful effect, especially in a gradual or subtle way.",
+             "Ubiquitous": "सर्वव्यापी - Present, appearing, or found everywhere.",
+             "Cacophony": "कर्णटक - A harsh discordant mixture of sound.",
+           "Cacophony": "कर्णटक - A harsh discordant mixture of sound",
+           "Conflate": "मिलाना - Combine (two or more texts, ideas, etc.) into one.",
+           "Denigrate": "अपमानित करना - Criticize unfairly; disparage.",
+           "Ephemeral": "क्षणभंगुर - Lasting for a very short time; transient.",
+           "Esoteric": "रहस्यमय - Intended for or understood by only a small number of people with special knowledge; mysterious.",
+           "Myriad": "अनगिनत - A countless or extremely great number.",
+           "Nefarious": "दुष्ट - (typically of an action or activity) Wicked, villainous, or criminal.",
+           "Pernicious": "हानिकारक - Having a harmful effect, especially in a gradual or subtle way.",
+           "Precarious": "अनिश्चित - Not securely held or in position; dangerously likely to fall or collapse.",
+           "Quintessential": "सारग्राही - Representing the most perfect or typical example of a quality or class.",
+           "Ubiquitous": "सर्वव्यापी - Present, appearing, or found everywhere.",
+           "Alacrity": "तत्परता - Brisk and cheerful readiness; eagerness.",
+           "Munificent": "उदार - More generous than is usual or necessary; extremely liberal.",
+           "Salient": "मुख्य - Most noticeable or important.",
+           "Voracious": "अत्यंत लालसी - Wanting or devouring great quantities of food; having a very eager approach to a particular activity.",
+           "Elucidate": "स्पष्ट करना - Make (something) clear; explain.",
+           "Verbose": "बहुवाक्य - Using or expressed in more words than are needed.",
+           "Pervasive": "सर्वव्यापी - Spread throughout.",
+           "Insidious": "कपटपूर्ण - Proceeding in a gradual, subtle way, but with harmful effects.",
+           "Quixotic": "अव्यावसायिक - Extremely idealistic, unrealistic, and impractical.",
+           "Illuminate": "रौंकना - Light up; make brighter or clearer.",
+           "Cacophony": "कर्णटक - A harsh discordant mixture of sound.",
+           "Elusive": "अप्राप्त्य - Difficult to find, catch, or achieve.",
+           "Obsolete": "पुराना - No longer produced or used; out of date.",
+           "Benevolent": "दयालु - Well-meaning and kindly.",
+           "Ubiquitous": "सर्वव्यापी - Present, appearing, or found everywhere.",
+           "Serendipity": "आनंदित योजना - The occurrence and development of events by chance in a happy or beneficial way.",
+           "Mundane": "सामान्य - Lacking interest or excitement; dull.",
+           "Quintessential": "सारग्राही - Representing the most perfect or typical example of a quality or class.",
+           "Nefarious": "दुष्ट - (typically of an action or activity) Wicked, villainous, or criminal.",
+           "Ephemeral": "क्षणभंगुर - Lasting for a very short time; transient.",
+           "Supine": "लेटा हुआ - Lying face upward.",
+           "Ambiguous": "अनेकार्थक - Open to more than one interpretation; having a double meaning.",
+           "Ineffable": "अवचनीय - Too great or extreme to be expressed or described in words.",
+           "Voracious": "अत्यंत लालसी - Wanting or devouring great quantities of food; having a very eager approach to a particular activity.",
+           "Mellifluous": "मधुर - Sweet or musical; pleasant to hear.",
+           "Ubiquitous": "सर्वव्यापकता - The state of being everywhere at once; omnipresence.",
+           "Sagacious": "बुद्धिमान - Having or showing keen mental discernment and good judgment; shrewd.",
+           "Panacea": "सर्वबीजग्रन्थि - A solution or remedy for all difficulties or diseases; a universal cure.",
+           "Disparate": "विभिन्न - Essentially different in kind; not allowing comparison.",
+           "Esoteric": "रहस्यमय - Intended for or understood by only a small number of people with special knowledge; mysterious.",
+           "Munificent": "उदार - More generous than is usual or necessary; extremely liberal.",
+           "Illuminate": "रौंकना - Light up; make brighter or clearer.",
+           "Cacophony": "कर्णटक - A harsh discordant mixture of sound.",
+           "Ubiquity": "सर्वव्यापकता - The state of being everywhere at once; omnipresence.",
+           "Sycophant": "चापलूस - A person who acts obsequiously towards someone important in order to gain advantage.",
+           "Esoteric": "रहस्यमय - Intended for or understood by only a small number of people with special knowledge; mysterious.",
+           "Disparate": "विभिन्न - Essentially different in kind; not allowing comparison.",
+           "Denigrate": "अपमानित करना - Criticize unfairly; disparage.",
+           "Myriad": "अनगिनत - A countless or extremely great number.",
+           "Ephemeral": "क्षणभंगुर - Lasting for a very short time; transient.",
+           "Supine": "लेटा हुआ - Lying face upward.",
+           "Ambiguous": "अनेकार्थक - Open to more than one interpretation; having a double meaning.",
+           "Ineffable": "अवचनीय - Too great or extreme to be expressed or described in words.",
+           "Voracious": "अत्यंत लालसी - Wanting or devouring great quantities of food; having a very eager approach to a particular activity.",
+           "Mellifluous": "मधुर - Sweet or musical; pleasant to hear.",
+           "Ubiquitous": "सर्वव्यापकता - The state of being everywhere at once; omnipresence.",
+           "Sagacious": "बुद्धिमान - Having or showing keen mental discernment and good judgment; shrewd.",
+           "Panacea": "सर्वबीजग्रन्थि - A solution or remedy for all difficulties or diseases; a universal cure.",
+           "Denigrate": "अपमानित करना - Criticize unfairly; disparage.",
+           "Esoteric": "रहस्यमय - Intended for or understood by only a small number of people with special knowledge; mysterious.",
+           "Disparate": "विभिन्न - Essentially different in kind; not allowing comparison.",
+           "Insidious": "कपटपूर्ण - Proceeding in a gradual, subtle way, but with harmful effects.",
+           "Pristine": "निर्मल - In its original condition; unspoiled.",
+           "Quixotic": "अव्यावसायिक - Extremely idealistic, unrealistic, and impractical.",
+           "Salient": "मुख्य - Most noticeable or important.",
+           "Voracious": "अत्यंत लालसी - Wanting or devouring great quantities of food; having a very eager approach to a particular activity.",
+           "Conundrum": "समस्या - A confusing and difficult problem or question.",
+           "Esoteric": "रहस्यमय - Intended for or understood by only a small number of people with special knowledge; mysterious.",
+           "Ubiquitous": "सर्वव्यापी - Present, appearing, or found everywhere.",
+           "Ephemeral": "क्षणभंगुर - Lasting for a very short time; transient.",
+           "Penultimate": "अंतिम से पहले का - Second to last in a series of things; second to the end.",
+           "Quintessential": "सारग्राही - Representing the most perfect or typical example of a quality or class.",
+           "Insidious": "कपटपूर्ण - Proceeding in a gradual, subtle way, but with harmful effects.",
+           "Pristine": "निर्मल - In its original condition; unspoiled.",
+           "Quixotic": "अव्यावसायिक - Extremely idealistic, unrealistic, and impractical.",
+           "Salient": "मुख्य - Most noticeable or important.",
+           "Voracious": "अत्यंत लालसी - Wanting or devouring great quantities of food; having a very eager approach to a particular activity.",
+           "Alacrity": "तत्परता - Brisk and cheerful readiness; eagerness.",
+           "Confluence": "संगम - The junction of two rivers, especially rivers of approximately equal width.",
+           "Pernicious": "हानिकारक - Having a harmful effect, especially in a gradual or subtle way.",
+           "Ubiquitous": "सर्वव्यापी - Present, appearing, or found everywhere.",
+           "Cacophony": "कर्णटक - A harsh discordant mixture of sound."
+
+
+             // Add more synonyms as needed
+         };
+       
+         return meaning[word.toLowerCase()] || null;
+     }
+    function findMeaning() {
+    const wordInput = document.getElementById('word').value;
+      // Implement logic to find synonyms here
+       const meaning = getMeaning(wordInput);
+
+           // Display the result
+           const resultContainer = document.getElementById('result');
+           if (meaning) {
+               resultContainer.innerHTML = `<p>Meaning of ${wordInput}: <strong>${meaning}</strong></p>`;
+           } else {
+               resultContainer.innerHTML = `<p>No meaning found for ${wordInput}.</p>`;
+           }
+       }
+    </script>
+</body>
+</html>

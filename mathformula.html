@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Formulas</title>
+    <style>
+      button {
+          margin: 20px;
+          padding: 10px 20px;
+          font-size: 1em;
+          background-color: #007BFF;
+          color: #fff;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+          background-color: #0056b3;
+      }
+        body {
+          
+
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 50px;
+        }
+
+        #container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #007BFF;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        .formula {
+            font-style: italic;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+  <button onclick="goBack()">Go Back</button>
+
+  <!-- Your other body elements go here -->
+
+  <script>
+      function goBack() {
+          window.history.back();
+      }
+  </script>
+    <div id="container">
+        <h2>Math Formulas</h2>
+        <p><strong>Factorization Formula:</strong> \(a^2 - b^2 = (a - b)(a + b)\)</p>
+        <!-- Add more formulas as needed -->
+    </div>
+</body>
+</html>

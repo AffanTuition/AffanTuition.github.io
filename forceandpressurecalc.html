@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Force Calculator</title>
+    <link rel="stylesheet" type="text/css" href="tablecalc.css">
+</head>
+<body>
+    <h1>Force Calculator</h1>
+    <div class="calculator-container">
+        <label for="mass">Mass (kg):</label>
+        <input type="number" id="mass" placeholder="Enter mass">
+
+        <label for="acceleration">Acceleration (m/s²):</label>
+        <input type="number" id="acceleration" placeholder="Enter acceleration">
+
+        <button id="calculateForceButton">Calculate Force</button>
+
+        <!-- For result -->
+        <p id="forceResult" height="100" width="20"></p>
+    </div>
+
+    <script src="physicscalc.js"></script>
+</body>
+</html>

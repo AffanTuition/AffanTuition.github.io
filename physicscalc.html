@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Formula Calculator</title>
+    <link rel="stylesheet" type="text/css" href="physicscalc.css">
+</head>
+<body>
+    <h1>Physics Formula Calculator</h1>
+    <div class="calculator-buttons">
+          <button onclick="openForceCalculator()">Force and Pressure Calculator</button>
+      <button onclick="openTemperatureConversionCalculator()">Temperature Conversation Calculator</button>
+      <button onclick="opentimeandmotionCalculator()">Distance,Time and Speed Calculator</button>
+      <button onclick="openpressurecalculator()">Pressure Calculator</button>
+        <!-- Add more buttons for other calculators -->
+    </div>
+
+    <script src="physicscalc.js"></script>
+  <style>
+  body {
+
+    background-image: url('physicscalc.jpg');
+            background-size: cover; /* Adjust as needed */
+            background-repeat: no-repeat;
+            background-attachment: fixed; /* Ensures the background stays fixed while scrolling */
+        
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+  }
+
+  h1 {
+      color: solid blue;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+  }
+
+  .calculator-buttons {
+      margin-top: 20px;
+  }
+
+  button {
+      font-size: 1.2em;
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007BFF;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+      background-color: #0056b3;
+  }
+</style>
+</body>
+</html>

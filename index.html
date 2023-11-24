@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Affan's Tuition</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="advance.css">
+
+
+    <style>
+        /* Keyframes for the drop animation */
+        @keyframes dropText {
+            0% {
+                opacity: 0;
+                transform: translateY(-100px) scale(0.5);
+                color: transparent;
+                text-shadow: none;
+            }
+            50% {
+                transform: translateY(0px) scale(1.5);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                color: #ff5733; /* Color of the text */
+                text-shadow: 2px 2px 4px rgba(255, 87, 51, 0.6); /* Glow effect */
+            }
+        }
+
+        /* Animation for the first text */
+        .animate-text1 {
+            animation: dropText 3s ease-in-out forwards;
+            font-family: 'Your-Desired-Font', sans-serif; /* Add your desired font here */
+        }
+
+        /* Animation for the second text */
+        .animate-text2 {
+            animation: dropText 6s,fade 10s ease-in-out 3.5s forwards;
+            opacity: 0;
+            font-family: 'Your-Desired-Font', 'Noto Serif Bold', sans-serif; /* Add your desired font here */
+        }
+        /* Styling for the "Click here for more" text */
+        .click-here-text {
+            font-size: 18px;
+            color: #000;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        /* Additional styles for the hamburger icon */
+        .menu-toggle {
+            position: fixed;
+            top: 0;
+            left: 0;
+            margin: 10px;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="photo.jpg" alt="Affan's Tuition Logo">
+        <h1 class="animate-text1">Welcome to Affan's Tuition</h1>
+        <p class="animate-text2" id="text2" >This Website is developed by Md Fidaur Rahman</p>
+        <div class="menu-toggle">
+            <div class="hamburger"></div>
+        </div>
+        
+    </header>
+    <nav class="navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Image Gallery</a></li>
+          <li><a href="current_status.html">Open/Close</a></li>
+          <li><a href="homework.html">Homework</a></li>
+          <li><a href="thought.html">Thoughts</a></li>
+          <li><a href="bot.html">Customer Support</a></li>
+          <li><a href="game.html">Games</a></li>
+        </ul>
+    </nav>
+  <main class="news-section">
+    <div class="news-card">
+        <img src="news.img.jpg" alt="News Image" class="news-img">
+        <div class="news-content">
+            <h3 class="news-title">Tuition Close</h3>
+            <p class="news-description">Tuition is closed till 13th November</p>
+        </div>
+    </div>
+
+    
+    <!-- Additional news posts -->
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+          <li><a href="gallery.html">Image Gallery</a></li>
+          <li><a href="current_status.html">Open/Close</a></li>
+          <li><a href="homework.html">Homework</a></li>
+          <li><a href="thought.html">Thoughts</a></li>
+          <li><a href="bot.html">Customer Support</a></li>
+          <li><a href="game.html">Games</a></li>
+          <li><a href="studytool.html">Study Tool</a></li>
+        </ul>
+    </div>
+    <section id="about" class="section about-section">
+        <h2>About Us</h2>
+        <p>Welcome to Affan's Tuition, where the journey to academic excellence begins. Our commitment to education knows no bounds, and our mission is to empower you with knowledge and inspire a lifelong love for learning. We are dedicated to nurturing the talents and potential within each student, helping them achieve their dreams and aspirations.</p>
+        <p>At Affan's Tuition, we offer a rich tapestry of educational experiences, providing personalized guidance and support. Our team of dedicated educators is passionate about your success, and we believe that every student has the ability to shine brightly.</p>
+        <p>Join us on this journey to academic excellence, and let us help you achieve your goals.</p>
+        <img src="photo.jpg" alt="Educational Image 1">
+        <img src="pic.jpg.jpg" alt="Educational Image 2">
+    </section>
+    <section id="contact" class="section contact-section">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or inquiries, please feel free to contact us:</p>
+        <p>Phone: +91 9852766154</p>
+        <p>Email: <a href="mailto:mdaffanshoaib@gmail.com">mdaffanshoaib@gmail.com</a></p>
+    </section>
+    
+        
+     
+       
+     <script>
+      
+      const menuToggle = document.querySelector('.menu-toggle');
+        const mobileMenu = document.querySelector('.mobile-menu'); 
+
+        menuToggle.addEventListener('click', () => {
+             mobileMenu.classList.toggle('active');
+ 
+                                    });
+       
+    </script>
+</body>
+</html>

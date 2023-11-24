@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antonym Finder</title>
+    <link rel="stylesheet" type="text/css" href="english-tool.css">
+</head>
+<body>
+    <div class="tool-container">
+        <h1>Antonym Finder</h1>
+        <label for="word">Enter a Word:</label>
+        <input type="text" id="word" placeholder="E.g., happy">
+
+        <button onclick="findAntonym()">Find Antonym</button>
+
+        <div id="result"></div>
+        <table id="antonymTable">
+            <thead>
+                <tr>
+        <th>Word</th>            <th>Antonyms</th>
+                  </tr>
+            </thead>
+            <tbody id="antonymBody">
+             <tr>
+ <td>Happy</td>
+               <td>Sad</td>
+             </tr>         
+              <tr>
+                <td>Hot</td>
+                <td>Cold</td>
+              </tr>
+              <tr>
+                <td>Fast</td>
+                <td>Slow</td>
+              </tr>
+              <tr>
+                <td>High</td>
+                <td>Low</td>
+              </tr>
+              <tr>
+                <td>Day</td>
+                <td>Night</td>
+              </tr>
+              <tr>
+                <td>Up</td>
+                <td>Down</td>
+              </tr>
+              <tr>
+                <td>Win</td>
+                <td>Lose</td>
+              </tr>
+              <tr>
+                <td>Young</td>
+                <td>Old</td>
+              </tr>
+              <tr>
+                <td>Rich</td>
+                <td>Poor</td>
+              </tr>
+              <tr>
+                <td>Strong</td>
+                <td>Weak</td>
+              </tr>
+              <tr>
+                <td>Love</td>
+                <td>Hate</td>
+              </tr>
+              <tr>
+                <td>Big</td>
+                <td>Small</td>
+              </tr>
+              <tr>
+                <td>Open</td>
+                <td>Closed</td>
+              </tr>
+              <tr>
+                <td>True</td>
+                <td>False</td>
+              </tr>
+              <tr>
+                <td>Inside</td>
+                <td>Outside</td>
+              </tr>
+              <tr>
+                <td>Brave</td>
+                <td>Fearful</td>
+              </tr>
+              <tr>
+                <td>Start</td>
+                <td>Finish</td>
+              </tr>
+              <tr>
+                <td>Happy</td>
+                <td>Angry</td>
+              </tr>
+              <tr>
+                <td>Light</td>
+                <td>Dark</td>
+              </tr>
+              <tr>
+                <td>Smart</td>
+                <td>Dull</td>
+              </tr>
+              <tr>
+                <td>Old</td>
+                <td>New</td>
+              </tr>
+              <tr>
+                <td>Full</td>
+                <td>Empty</td>
+              </tr>
+              <tr>
+                <td>Thick</td>
+                <td>Thin</td>
+              </tr>
+              <tr>
+                <td>Near</td>
+                <td>Far</td>
+              </tr>
+              <tr>
+                <td>Buy</td>
+                <td>Sell</td>
+              </tr>
+              <tr>
+                <td>Fast</td>
+                <td>Slow</td>
+              </tr>
+              <tr>
+                <td>Easy</td>
+                <td>Difficult</td>
+              </tr>
+              <tr>
+                <td>Beautiful</td>
+                <td>Ugly</td>
+              </tr>
+              <tr>
+                <td>Wild</td>
+                <td>Tame</td>
+              </tr>
+              <tr>
+                <td>Soft</td>
+                <td>Hard</td>
+              </tr>
+              <tr>
+                <td>Alive</td>
+                <td>Dead</td>
+              </tr>
+              <tr>
+                <td>Begin</td>
+                <td>End</td>
+              </tr>
+              <tr>
+                <td>Fasten</td>
+                <td>Unfasten</td>
+              </tr>
+              <tr>
+                <td>Gather</td>
+                <td>Scatter</td>
+              </tr>
+              <tr>
+                <td>North</td>
+                <td>South</td>
+              </tr>
+              <tr>
+                <td>Push</td>
+                <td>Pull</td>
+              </tr>
+              <tr>
+                <td>Quiet</td>
+                <td>Noisy</td>
+              </tr>
+              <tr>
+                <td>Rise</td>
+                <td>Fall</td>
+              </tr>
+              <tr>
+                <td>Same</td>
+                <td>Different</td>
+              </tr>
+              <tr>
+                <td>True</td>
+                <td>False</td>
+              </tr>
+              <tr>
+                <td>Wild</td>
+                <td>Tame</td>
+              </tr>
+              <tr>
+                <td>Young</td>
+                <td>Old</td>
+              </tr>
+              <tr>
+                <td>Zenith</td>
+                <td>Nadir</td>
+              </tr>
+              <tr>
+                <td>Arrive</td>
+                <td>Depart</td>
+              </tr>
+              <tr>
+                <td>Expand</td>
+                <td>Contract</td>
+              </tr>
+              <tr>
+                <td>Construct</td>
+                <td>Destruct</td>
+              </tr>
+              <tr>
+                <td>Courageous</td>
+                <td>Cowardly</td>
+              </tr>
+              <tr>
+                <td>Deep</td>
+                <td>Shallow</td>
+              </tr>
+              <tr>
+                <td>Employ</td>
+                <td>Dismiss</td>
+              </tr>
+              <tr>
+                <td>Expand</td>
+                <td>Contract</td>
+              </tr>
+              <tr>
+                <td>Generous</td>
+                <td>Stingy</td>
+              </tr>
+              <tr>
+                <td>Harmony</td>
+                <td>Conflict</td>
+              </tr>
+              <tr>
+                <td>Include</td>
+                <td>Exclude</td>
+              </tr>
+              <tr>
+                <td>Knowledge</td>
+                <td>Ignorance</td>
+              </tr>
+              <tr>
+                <td>Lend</td>
+                <td>Borrow</td>
+              </tr>
+              <tr>
+                <td>Modest</td>
+                <td>Arrogant</td>
+              </tr>
+              <tr>
+                <td>Optimistic</td>
+                <td>Pessimistic</td>
+              </tr>
+              <tr>
+                <td>Permit</td>
+                <td>Forbid</td>
+              </tr>
+              <tr>
+                <td>Plentiful</td>
+                <td>Scarce</td>
+              </tr>
+              <tr>
+                <td>Reveal</td>
+                <td>Conceal</td>
+              </tr>
+              <tr>
+                <td>Secure</td>
+                <td>Insecure</td>
+              </tr>
+              <tr>
+                <td>Simple</td>
+                <td>Complex</td>
+              </tr>
+              <tr>
+                <td>Unite</td>
+                <td>Divide</td>
+              </tr>
+              <tr>
+                <td>Visible</td>
+                <td>Hidden</td>
+              </tr>
+              <tr>
+                <td>Wise</td>
+                <td>Foolish</td>
+              </tr>
+              <tr>
+                <td>Accept</td>
+                <td>Reject</td>
+              </tr>
+              <tr>
+                <td>Admire</td>
+                <td>Despise</td>
+              </tr>
+              <tr>
+                <td>Awake</td>
+                <td>Asleep</td>
+              </tr>
+              <tr>
+                <td>Defend</td>
+                <td>Attack</td>
+              </tr>
+              <tr>
+                <td>Forgive</td>
+                <td>Blame</td>
+              </tr>
+              <tr>
+                <td>Freeze</td>
+                <td>Melt</td>
+              </tr>
+              <tr>
+                <td>Gain</td>
+                <td>Lose</td>
+              </tr>
+              <tr>
+                <td>Increase</td>
+                <td>Decrease</td>
+              </tr>
+              <tr>
+                <td>Invite</td>
+                <td>Exclude</td>
+              </tr>
+              <tr>
+                <td>Respect</td>
+                <td>Disrespect</td>
+              </tr>
+              <tr>
+                <td>Sturdy</td>
+                <td>Fragile</td>
+              </tr>
+              <tr>
+                <td>Arrive</td>
+                <td>Depart</td>
+              </tr>
+              <tr>
+                <td>Busy</td>
+                <td>Idle</td>
+              </tr>
+              <tr>
+                <td>Confident</td>
+                <td>Uncertain</td>
+              </tr>
+              <tr>
+                <td>Eager</td>
+                <td>Reluctant</td>
+              </tr>
+              <tr>
+                <td>Frequent</td>
+                <td>Infrequent</td>
+              </tr>
+              <tr>
+                <td>Healthy</td>
+                <td>Unhealthy</td>
+              </tr>
+              <tr>
+                <td>Just</td>
+                <td>Unjust</td>
+              </tr>
+              <tr>
+                <td>Kind</td>
+                <td>Cruel</td>
+              </tr>
+              <tr>
+                <td>Marvelous</td>
+                <td>Ordinary</td>
+              </tr>
+              <tr>
+                <td>Open</td>
+                <td>Closed</td>
+              </tr>
+              <tr>
+                <td>Patient</td>
+                <td>Impatient</td>
+              </tr>
+              <tr>
+                <td>Quiet</td>
+                <td>Noisy</td>
+              </tr>
+              <tr>
+                <td>Safe</td>
+                <td>Unsafe</td>
+              </tr>
+              <tr>
+                <td>Victory</td>
+                <td>Defeat</td>
+              </tr>
+              <tr>
+                <td>Wet</td>
+                <td>Dry</td>
+              </tr>
+              <tr>
+                <td>Brave</td>
+                <td>Timid</td>
+              </tr>
+              <tr>
+                <td>Construct</td>
+                <td>Demolish</td>
+              </tr>
+              <tr>
+                <td>Delight</td>
+                <td>Dismay</td>
+              </tr>
+              <tr>
+                <td>Expand</td>
+                <td>Contract</td>
+              </tr>
+              <tr>
+                <td>Famous</td>
+                <td>Unknown</td>
+              </tr>
+              <tr>
+                <td>Gentle</td>
+                <td>Rough</td>
+              </tr>
+              <tr>
+                <td>Hope</td>
+                <td>Despair</td>
+              </tr>
+              <tr>
+                <td>Innocent</td>
+                <td>Guilty</td>
+              </tr>
+              <tr>
+                <td>Joy</td>
+                <td>Sorrow</td>
+              </tr>
+              <tr>
+                <td>Knowledge</td>
+                <td>Ignorance</td>
+              </tr>
+              <tr>
+                <td>Liberal</td>
+                <td>Conservative</td>
+              </tr>
+              <tr>
+                <td>Mend</td>
+                <td>Break</td>
+              </tr>
+              <tr>
+                <td>Open</td>
+                <td>Close</td>
+              </tr>
+              <tr>
+                <td>Powerful</td>
+                <td>Powerless</td>
+              </tr>
+              <tr>
+                <td>Quick</td>
+                <td>Slow</td>
+              </tr>
+              <tr>
+                <td>Reliable</td>
+                <td>Unreliable</td>
+              </tr>
+              <tr>
+                <td>Smooth</td>
+                <td>Rough</td>
+              </tr>
+              <tr>
+                <td>Tidy</td>
+                <td>Messy</td>
+              </tr>
+              <tr>
+                <td>Unique</td>
+                <td>Common</td>
+              </tr>
+              <tr>
+                <td>Valuable</td>
+                <td>Worthless</td>
+              </tr>
+              <tr>
+                <td>Wise</td>
+                <td>Foolish</td>
+              </tr>
+              <tr>
+                <td>Yield</td>
+                <td>Resist</td>
+              </tr>
+              <tr>
+                <td>Zenith</td>
+                <td>Nadir</td>
+              </tr>
+              <tr>
+                <td>Ascend</td>
+                <td>Descend</td>
+              </tr>
+              <tr>
+                <td>Bright</td>
+                <td>Dull</td>
+              </tr>
+              <tr>
+                <td>Consent</td>
+                <td>Refuse</td>
+              </tr>
+              <tr>
+                <td>Defend</td>
+                <td>Attack</td>
+              </tr>
+              <tr>
+                <td>Engage</td>
+                <td>Withdraw</td>
+              </tr>
+              <tr>
+                <td>Fragile</td>
+                <td>Sturdy</td>
+              </tr>
+              <tr>
+                <td>Gather</td>
+                <td>Scatter</td>
+              </tr>
+              <tr>
+                <td>Harsh</td>
+                <td>Gentle</td>
+              </tr>
+              <tr>
+                <td>Idle</td>
+                <td>Active</td>
+              </tr>
+              <tr>
+                <td>Jolly</td>
+                <td>Serious</td>
+              </tr>
+              <tr>
+                <td>Knowledgeable</td>
+                <td>Ignorant</td>
+              </tr>
+              <tr>
+                <td>Lively</td>
+                <td>Lethargic</td>
+              </tr>
+              <tr>
+                <td>Magnify</td>
+                <td>Shrink</td>
+              </tr>
+              <tr>
+                <td>Noisy</td>
+                <td>Silent</td>
+              </tr>
+              <tr>
+                <td>Overcome</td>
+                <td>Surrender</td>
+              </tr>
+              <tr>
+                <td>Peaceful</td>
+                <td>Chaotic</td>
+              </tr>
+              <tr>
+                <td>Quicken</td>
+                <td>Delay</td>
+              </tr>
+              <tr>
+                <td>Reckless</td>
+                <td>Cautious</td>
+              </tr>
+              <tr>
+                <td>Simple</td>
+                <td>Complicated</td>
+              </tr>
+              <tr>
+                <td>Transparent</td>
+                <td>Opaque</td>
+              </tr>
+              <tr>
+                <td>Upset</td>
+                <td>Content</td>
+              </tr>
+              <tr>
+                <td>Victory</td>
+                <td>Defeat</td>
+              </tr>
+              <tr>
+                <td>Well</td>
+                <td>Unwell</td>
+              </tr>
+              <tr>
+                <td>Exceed</td>
+                <td>Fall Short</td>
+              </tr>
+              <tr>
+                <td>Generous</td>
+                <td>Stingy</td>
+              </tr>
+              <tr>
+                <td>Harm</td>
+                <td>Protect</td>
+              </tr>
+              <tr>
+                <td>Ignite</td>
+                <td>Extinguish</td>
+              </tr>
+              <tr>
+                <td>Jubilant</td>
+                <td>Mournful</td>
+              </tr>
+              <tr>
+                <td>Kind</td>
+                <td>Cruel</td>
+              </tr>
+              <tr>
+                <td>Liberate</td>
+                <td>Confine</td>
+              </tr>
+              <tr>
+                <td>Magnify</td>
+                <td>Minify</td>
+              </tr>
+              <tr>
+                <td>Near</td>
+                <td>Far</td>
+              </tr>
+              <tr>
+                <td>Open</td>
+                <td>Close</td>
+              </tr>
+              <tr>
+                <td>Praise</td>
+                <td>Criticize</td>
+              </tr>
+              <tr>
+                <td>Quicken</td>
+                <td>Delay</td>
+              </tr>
+              <tr>
+                <td>Renew</td>
+                <td>Obsolete</td>
+              </tr>
+              <tr>
+                <td>Secure</td>
+                <td>Insecure</td>
+              </tr>
+              <tr>
+                <td>Thrive</td>
+                <td>Decline</td>
+              </tr>
+              <tr>
+                <td>Up</td>
+                <td>Down</td>
+              </tr>
+              <tr>
+                <td>Vigorous</td>
+                <td>Lethargic</td>
+              </tr>
+              <tr>
+                <td>Wonderful</td>
+                <td>Awful</td>
+              </tr>
+              <tr>
+                <td>Xceed</td>
+                <td>Yield</td>
+              </tr>
+              <tr>
+                <td>Yearn</td>
+                <td>Recoil</td>
+              </tr>
+              <tr>
+                <td>Zenith</td>
+                <td>Nadir</td>
+              </tr>
+              <tr>
+                <td>Abundant</td>
+                <td>Scarce</td>
+              </tr>
+              <tr>
+                <td>Brisk</td>
+                <td>Sluggish</td>
+              </tr>
+              <tr>
+                <td>Cheerful</td>
+                <td>Melancholy</td>
+              </tr>
+              <tr>
+                <td>Diligent</td>
+                <td>Slothful</td>
+              </tr>
+              <tr>
+                <td>Entrance</td>
+                <td>Exit</td>
+              </tr>
+              <tr>
+                <td>Fresh</td>
+                <td>Stale</td>
+              </tr>
+              <tr>
+                <td>Grow</td>
+                <td>Shrink</td>
+              </tr>
+              <tr>
+                <td>Admit</td>
+                <td>Deny</td>
+              </tr>
+              <tr>
+                <td>Bright</td>
+                <td>Dull</td>
+              </tr>
+              <tr>
+                <td>Construct</td>
+                <td>Demolish</td>
+              </tr>
+              <tr>
+                <td>End</td>
+                <td>Begin</td>
+              </tr>
+              <tr>
+                <td>Forgive</td>
+                <td>Blame</td>
+              </tr>
+              <tr>
+                <td>Gentle</td>
+                <td>Rough</td>
+              </tr>
+              <tr>
+                <td>Halt</td>
+                <td>Proceed</td>
+              </tr>
+              <tr>
+                <td>Include</td>
+                <td>Exclude</td>
+              </tr>
+              <tr>
+                <td>Joy</td>
+                <td>Sorrow</td>
+              </tr>
+              <tr>
+                <td>Keen</td>
+                <td>Indifferent</td>
+              </tr>
+              <tr>
+                <td>Limit</td>
+                <td>Unlimited</td>
+              </tr>
+              <tr>
+                <td>Mock</td>
+                <td>Praise</td>
+              </tr>
+              <tr>
+                <td>Narrow</td>
+                <td>Broad</td>
+              </tr>
+              <tr>
+                <td>Order</td>
+                <td>Chaos</td>
+              </tr>
+              <tr>
+                <td>Permit</td>
+                <td>Forbid</td>
+              </tr>
+              <tr>
+                <td>Question</td>
+                <td>Answer</td>
+              </tr>
+              <tr>
+                <td>Rest</td>
+                <td>Exertion</td>
+              </tr>
+              <tr>
+                <td>Sturdy</td>
+                <td>Fragile</td>
+              </tr>
+              <tr>
+                <td>Tidy</td>
+                <td>Messy</td>
+              </tr>
+              <tr>
+                <td>Usual</td>
+                <td>Unusual</td>
+              </tr>
+              <tr>
+                <td>Valuable</td>
+                <td>Worthless</td>
+              </tr>
+              <tr>
+                <td>Warm</td>
+                <td>Cool</td>
+              </tr>
+              <tr>
+                <td>Xceed</td>
+                <td>Yield</td>
+              </tr>
+              <tr>
+                <td>Yearn</td>
+                <td>Recoil</td>
+              </tr>
+              <tr>
+                <td>Zenith</td>
+                <td>Nadir</td>
+              </tr>
+              <tr>
+                <td>Abundant</td>
+                <td>Scarce</td>
+              </tr>
+              <tr>
+                <td>Blunt</td>
+                <td>Sharp</td>
+              </tr>
+              <tr>
+                <td>Courageous</td>
+                <td>Cowardly</td>
+              </tr>
+              <tr>
+                <td>Delight</td>
+                <td>Dismay</td>
+              </tr>
+              <tr>
+                <td>Enhance</td>
+                <td>Deteriorate</td>
+              </tr>
+
+            
+            </tbody>
+        </table>
+    </div>
+  <script>
+      function findAntonym() {
+          const wordInput = document.getElementById('word').value;
+
+          // You can implement logic to find antonyms here
+          const antonym = getAntonym(wordInput);
+
+          // Display the result
+          const resultContainer = document.getElementById('result');
+          if (antonym) {
+              resultContainer.innerHTML = `<p>Antonym of ${wordInput}: <strong>${antonym}</strong></p>`;
+          } else {
+              resultContainer.innerHTML = `<p>No antonym found for ${wordInput}.</p>`;
+          }
+      }
+
+      // Example function to get antonym (replace with actual logic)
+      function getAntonym(word) {
+          const antonyms = 
+              {
+                "happy": "sad",
+                "hot": "cold",
+                "fast": "slow",
+                "high": "low",
+                "day": "night",
+                "up": "down",
+                "win": "lose",
+                "young": "old",
+                "rich": "poor",
+                "love": "hate",
+                "big": "small",
+                "open": "closed",
+                "true": "false",
+                "inside": "outside",
+                "brave": "fearful",
+                "start": "finish",
+                "alive": "dead",
+                "begin": "end",
+                "fasten": "unfasten",
+                "gather": "scatter",
+                "north": "south",
+                "push": "pull",
+                "quiet": "noisy",
+                "rise": "fall",
+                "same": "different",
+                "wild": "tame",
+                "soft": "hard",
+                "old": "new",
+                "full": "empty",
+                "thick": "thin",
+                "near": "far",
+                "buy": "sell",
+                "easy": "difficult",
+                "beautiful": "ugly",
+                "smart": "dull",
+                "construct": "destruct",
+                "deep": "shallow",
+                "employ": "dismiss",
+                "expand": "contract",
+                "generous": "stingy",
+                "harmony": "conflict",
+                "include": "exclude",
+                "knowledge": "ignorance",
+                "lend": "borrow",
+                "modest": "arrogant",
+                "optimistic": "pessimistic",
+                "permit": "forbid",
+                "plentiful": "scarce",
+                "reveal": "conceal",
+                "thrive": "decline",
+                "north": "south",
+                "open": "closed",
+                "prosper": "fail",
+                "raise": "lower",
+                "arrive": "depart",
+                "busy": "idle",
+                "confident": "uncertain",
+                "eager": "reluctant",
+                "frequent": "infrequent",
+                "healthy": "unhealthy",
+                "just": "unjust",
+                "kind": "cruel",
+                "marvelous": "ordinary",
+                "open": "closed",
+                "patient": "impatient",
+                "quiet": "noisy",
+                "safe": "unsafe",
+                "victory": "defeat",
+                "wet": "dry",
+                "brave": "timid",
+                "construct": "demolish",
+                "delight": "dismay",
+                "expand": "contract",
+                "famous": "unknown",
+                "gentle": "rough",
+                "hope": "despair",
+                "innocent": "guilty",
+                "joy": "sorrow",
+                "knowledge": "ignorance",
+                "liberal": "conservative",
+                "mend": "break",
+                "open": "close",
+                "powerful": "powerless",
+                "quick": "slow",
+                "reliable": "unreliable",
+                "smooth": "rough",
+                "tidy": "messy",
+                "unique": "common",
+                "valuable": "worthless",
+                "wise": "foolish",
+                "yield": "resist",
+                "zenith": "nadir",
+                "ascend": "descend",
+                "bright": "dull",
+                "consent": "refuse",
+                "defend": "attack",
+                "engage": "withdraw",
+                "fragile": "sturdy",
+                "happy": "sad",
+                "well": "unwell",
+                "exceed": "fall short",
+                "generous": "stingy",
+                "harm": "protect",
+                "ignite": "extinguish",
+                "jubilant": "mournful",
+                "kind": "cruel",
+                "liberate": "confine",
+                "magnify": "minify",
+                "near": "far",
+                "open": "close",
+                "praise": "criticize",
+                "quicken": "delay",
+                "renew": "obsolete",
+                "secure": "insecure",
+                "thrive": "decline",
+                "up": "down",
+                "vigorous": "lethargic",
+                "wonderful": "awful",
+                "xceed": "yield",
+                "yearn": "recoil",
+                "zenith": "nadir",
+                "abundant": "scarce",
+                "blunt": "sharp",
+                "courageous": "cowardly",
+                "delight": "dismay",
+                "enhance": "deteriorate",
+                
+                  "sad": "happy",
+                  "cold": "hot",
+                  "slow": "fast",
+                  "low": "high",
+                  "night": "day",
+                  "down": "up",
+                  "lose": "win",
+                  "old": "young",
+                  "poor": "rich",
+                  "hate": "love",
+                  "small": "big",
+                  "closed": "open",
+                  "false": "true",
+                  "outside": "inside",
+                  "fearful": "brave",
+                  "finish": "start",
+                  "dead": "alive",
+                  "end": "begin",
+                  "unfasten": "fasten",
+                  "scatter": "gather",
+                  "south": "north",
+                  "pull": "push",
+                  "noisy": "quiet",
+                  "fall": "rise",
+                  "different": "same",
+                  "tame": "wild",
+                  "hard": "soft",
+                  "new": "old",
+                  "empty": "full",
+                  "thin": "thick",
+                  "far": "near",
+                  "sell": "buy",
+                  "difficult": "easy",
+                  "ugly": "beautiful",
+                  "dull": "smart",
+                  "destruct": "construct",
+                  "shallow": "deep",
+                  "dismiss": "employ",
+                  "contract": "expand",
+                  "stingy": "generous",
+                  "conflict": "harmony",
+                  "exclude": "include",
+                  "ignorance": "knowledge",
+                  "borrow": "lend",
+                  "arrogant": "modest",
+                  "pessimistic": "optimistic",
+                  "forbid": "permit",
+                  "scarce": "plentiful",
+                  "conceal": "reveal",
+                  "decline": "thrive",
+                  "south": "north",
+                  "closed": "open",
+                  "fail": "prosper",
+                  "lower": "raise",
+                  "depart": "arrive",
+                  "idle": "busy",
+                  "uncertain": "confident",
+                  "reluctant": "eager",
+                  "infrequent": "frequent",
+                  "unhealthy": "healthy",
+                  "unjust": "just",
+                  "cruel": "kind",
+                  "ordinary": "marvelous",
+                  "closed": "open",
+                  "impatient": "patient",
+                  "noisy": "quiet",
+                  "unsafe": "safe",
+                  "defeat": "victory",
+                  "dry": "wet",
+                  "timid": "brave",
+                  "demolish": "construct",
+                  "dismay": "delight",
+                  "contract": "expand",
+                  "unknown": "famous",
+                  "rough": "gentle",
+                  "despair": "hope",
+                  "guilty": "innocent",
+                  "sorrow": "joy",
+                  "ignorance": "knowledge",
+                  "conservative": "liberal",
+                  "break": "mend",
+                  "close": "open",
+                  "powerless": "powerful",
+                  "slow": "quick",
+                  "unreliable": "reliable",
+                  "rough": "smooth",
+                  "messy": "tidy",
+                  "common": "unique",
+                  "worthless": "valuable",
+                  "foolish": "wise",
+                  "resist": "yield",
+                  "nadir": "zenith",
+                  "descend": "ascend",
+                  "dull": "bright",
+                  "refuse": "consent",
+                  "attack": "defend",
+                  "withdraw": "engage",
+                  "sturdy": "fragile",
+                  "sad": "happy",
+                  "unwell": "well",
+                  "fall short": "exceed",
+                  "stingy": "generous",
+                  "protect": "harm",
+                  "extinguish": "ignite",
+                  "mournful": "jubilant",
+                  "cruel": "kind",
+                  "confine": "liberate",
+                  "minify": "magnify",
+                  "far": "near",
+                  "close": "open",
+                  "criticize": "praise",
+                  "delay": "quicken",
+                  "obsolete": "renew",
+                  "insecure": "secure",
+                  "decline": "thrive",
+                  "down": "up",
+                  "lethargic": "vigorous",
+                  "awful": "wonderful",
+                  "yield": "xceed",
+                  "recoil": "yearn",
+                  "nadir": "zenith",
+                  "scarce": "abundant",
+                  "sharp": "blunt",
+                  "cowardly": "courageous",
+                  "dismay": "delight",
+                  "deteriorate": "enhance"
+                
+
+              };
+
+          
+
+          return antonyms[word.toLowerCase()] || null;
+      }
+
+   </script>
+
+    <style>
+       body {
+           font-family: 'Arial', sans-serif;
+           margin: 0;
+           padding: 0;
+           background-color: #f4f4f4;
+           color: #333;
+       }l
+
+       .tool-container {
+           background-color: #fff;
+           padding: 20px;
+           border-radius: 10px;
+           box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+           text-align: center;
+         max-width: 600px; /* Adjust the max-width as needed */
+             margin: 0 auto;  /* Center the container */
+             overflow: auto;  /* Enable scrolling */
+         }
+
+       h1 {
+           color: #007BFF;
+       }
+
+       label {
+           display: block;
+           margin: 10px 0;
+       }
+
+       input {
+           padding: 10px;
+           font-size: 1em;
+       }
+
+       button {
+           padding: 10px 20px;
+           background-color: #007BFF;
+           color: #fff;
+           border: none;
+           border-radius: 5px;
+           cursor: pointer;
+           transition: background-color 0.3s ease;
+       }
+
+       button:hover {
+           background-color: #0056b3;
+       }
+
+       #result {
+         margin-top: 20px;
+       }
+     table {
+          width: 100%;
+          margin-top: 20px;
+          border-collapse: collapse;
+      }
+      #button{
+            background:#0d6efd;
+      outline:0;
+      margin-top:0.5rem;
+            text-align:center;
+            border-radius:15px;
+            height:3.5rem;
+            cursor:pointer;
+          }
+          button:hover{
+            background:#0759d3;
+          }
+
+      th, td {
+          border: 1px solid #ddd;
+          padding: 8px;
+          text-align: left;
+      }
+
+      th {
+          background-color: #f2f2f2;
+      }
+
+    </style>
+   
+             
+    
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distance, Time, and Speed Calculator</title>
+    <link rel="stylesheet" type="text/css" href="distance-calculator.css">
+</head>
+<body>
+    <h1>Distance, Time, and Speed Calculator</h1>
+    <div class="calculator-container">
+        <label for="outputType">Select Output Type:</label>
+        <select id="outputType">
+            <option value="distance">Calculate Distance</option>
+            <option value="time">Calculate Time</option>
+            <option value="speed">Calculate Speed</option>
+        </select>
+
+        <label for="distance">Distance (in meters):</label>
+        <input type="number" id="distance" placeholder="Enter distance">
+
+        <label for="time">Time (in seconds):</label>
+        <input type="number" id="time" placeholder="Enter time">
+
+        <label for="speed">Speed (in m/s):</label>
+        <input type="number" id="speed" placeholder="Enter speed">
+
+        <button onclick="calculate()">Calculate</button>
+
+        <p id="result"></p>
+    </div>
+  <div class="formulas">
+      <p id="distanceFormula">Distance Formula:  Distance = Time × Speed </p>
+      <p id="timeFormula">Time Formula: Time = Distance ÷ Speed</p>
+      <p id="speedFormula">Speed Formula: Speed = Distance ÷ Time</p>
+  </div>
+<style>
+   body {
+       font-family: 'Arial', sans-serif;
+       background-color: #f4f4f4;
+       margin: 0;
+       padding: 0;
+   }
+
+   h1 {
+       color: #007BFF;
+       text-align: center;
+   }
+
+   .calculator-container {
+       max-width: 600px;
+       margin: 20px auto;
+       padding: 20px;
+       background-color: #fff;
+       border-radius: 10px;
+       box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+       text-align: center;
+   }
+
+   label {
+       display: block;
+       margin: 10px 0;
+   }
+
+   input {
+       width: 100%;
+       padding: 10px;
+       margin: 5px 0;
+       box-sizing: border-box;
+   }
+
+   select, button {
+       width: 100%;
+       padding: 10px;
+       margin: 10px 0;
+       box-sizing: border-box;
+   }
+
+   button {
+       background-color: #007BFF;
+       color: #fff;
+       border: none;
+       border-radius: 5px;
+       cursor: pointer;
+       transition: background-color 0.3s ease;
+   }
+
+   button:hover {
+       background-color: #0056b3;
+   }
+
+   #result {
+       font-size: 1.2em;
+       margin: 20px 0;
+   }
+
+   .formulas {
+       text-align: left;
+       margin-top: 20px;
+   }
+
+   .formulas p {
+       margin: 10px 0;
+       font-size: 1em;
+       color: #333;
+       font-style: italic;
+   }
+
+</style>
+
+
+    <script src="physicscalc.js"></script>
+</body>
+</html>
