@@ -7,7 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
         "homework": "Homework for various classes can be found on our 'Homework' page.",
         "customer support": "For any assistance, our customer support team is available through the 'Customer Support' page featuring an AI-powered chatbot.",
         "games": "You can enjoy by playing games in the game page.",
-        "news": "Any update or news related to tuition can be found here."
+        "news": "Any update or news related to tuition can be found here.",
+        "study tool": "Study materials of the subject 'Math','Science','English' and 'S.S.T' can be found here"
     };
 
     const chatContainer = document.getElementById("chat-container");
