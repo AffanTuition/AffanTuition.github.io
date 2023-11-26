@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemistry Diagrams</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        /* Additional styles for the gallery */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0 auto;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+        }
+
+        h1 {
+            color: #2c3e50;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+          overflow:auto;
+
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            cursor: pointer;
+          overflow:auto;
+        }
+
+        /* Lightbox styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox img {
+            max-width: 80%;
+            max-height: 80%;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="menu-toggle">
+
+        </div>
+
+        <h1>Welcome to Chemistry Diagrams</h1>
+    </header>
+    <section id="gallery" class="section">
+        <h2>Diagram Gallery</h2>
+        <div class="gallery">
+        <img src="covalentbond.jpg" alt="Covalent Bond Diagram" />
+        <img src="ionicbond.jpg" alt="Ionic Bond Diagram" />
+        <img src="hydrogenbond.jpg" alt="Hydrogen Bond Diagram"/>
+        <img src="electrolysis.jpg" alt="Electrolysis Diagram"/>
+
+            <!-- Add more diagrams as needed -->
+        </div>
+    </section>
+
+
+</body>
+</html>
