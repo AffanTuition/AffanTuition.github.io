@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>HTML</title>
+  
+  <!-- HTML -->
+  
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="notes.css">
+  <style>
+    body{
+         display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    }
+    #head h2{
+      color:aqua;
+      text-shadow:0 0 25px aqua;
+      display:inline-block;
+      margin:0px;
+      font-size:23px;
+    }
+    #head{
+      color:aqua;
+      text-align:center;
+      display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+display:inline-block;
+margin:0px;
+font-size:23px;
+font-weight:bolder;
+margin-bottom:10px;
+    }
+    
+    header{
+     background-color:aqua;
+     display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+width:100vw;
+height:70px;
+position:absolute;
+top:0px;
+    }
+    header h2{
+      color:black;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div>
+      <h2>NOTES LE LO NOTES !</h2>
+    </div>
+   
+  </header>
+   <div id="head">
+     SUBJECT-WISE HANDWRITTEN NOTES BY
+   <h2>
+  FIDAUR</h2>
+ </div>
+  <div class='subjects'>
+    <a href='subjectNotes.html'><div>Science</div></a>
+<a href="subjectNotes.html"><div>Social Science</div></a>
+<a href='subjectNotes.html'><div>Maths</div></a>
+<a href="subjectNotes.html"><div>English</div></a>
+<a href="subjectNotes.html"><div>Hindi</div>
+</a>
+</div>
+  <footer>
+     <div class='copyright'>
+    <h5> © Md Fidaur Rahman | All rights reserved</h5></div>
+  </footer>
+</body>
+<script>
+   let subjects=document.querySelector('.subjects').querySelectorAll('a');
+   for(let i of subjects){
+     i.addEventListener("click",()=>{
+      localStorage.setItem("Subject",i.innerText);
+     })
+   }
+</script>
+</html>

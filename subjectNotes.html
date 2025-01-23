@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="notes.css">
+  <style>
+    body{
+      display:flex;
+      flex-direction:column;
+      justify-content: center;
+      align-items:center;
+    }
+      header{
+     background-color:aqua;
+     display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+width:100vw;
+height:70px;
+position:absolute;
+top:0px;
+    }
+    header h2{
+      color:black;
+    }
+  </style>
+</head>
+
+<body>
+    <header>
+    <div>
+      <h2>NOTES LE LO NOTES !</h2>
+    </div>
+
+  </header>
+  <div class='subjects chapters'>
+   
+</div>
+    <footer>
+     <div class='copyright'>
+    <h5> © Md Fidaur Rahman | All rights reserved</h5></div>
+  </footer>
+</body>
+<script>
+  let scienceChapters = [
+  "Chemical Reactions and Equations + Activity",
+  "Physics Formulae",
+  "Carbon and Its Compounds",
+  "The Human Eye and the Colourful World",
+  /*"Acids, Bases and Salts",
+  "Metals and Non-Metals",
+  
+  "Periodic Classification of Elements",
+  "Life Processes",
+  "Control and Coordination",
+  "How Do Organisms Reproduce?",
+  "Heredity and Evolution",
+  "Light - Reflection and Refraction",
+  "Electricity",
+  "Magnetic Effects of Electric Current",
+  "Sources of Energy",
+  "Our Environment",
+  "Management of Natural Resources"*/
+];
+let scienceLinks = [
+  "/science/scienceCh-1.pdf",
+  "/science/sciencePhysicsFormulae.pdf",
+  "/science/science.ch-4.pdf",
+  "/science/scienceCh-11.pdf",
+ /* "link2.pdf",
+  "link3.pdf",
+  "link4.pdf",
+  "link5.pdf",
+  "link6.pdf",
+  "link7.pdf",
+  "link8.pdf",
+  "link9.pdf",
+  "link10.pdf",
+  "link11.pdf",
+  "link12.pdf",
+  "link13.pdf",
+  "link14.pdf",
+  "link15.pdf",
+  "link16.pdf"*/
+];
+
+let mathsChapters = [
+  /*
+  "Real Numbers",
+  "Polynomials",
+  "Pair of Linear Equations in Two Variables",
+  "Quadratic Equations",
+  "Arithmetic Progressions",
+  "Triangles",
+  "Coordinate Geometry",
+  "Introduction to Trigonometry",
+  "Applications of Trigonometry",
+  "Circles",
+  "Constructions",
+  "Areas Related to Circles",
+  "Surface Areas and Volumes",
+  "Statistics",
+  "Probability"
+  */
+];
+let mathsLinks = [
+  /*
+  "link1.pdf",
+  "link2.pdf",
+  "link3.pdf",
+  "link4.pdf",
+  "link5.pdf",
+  "link6.pdf",
+  "link7.pdf",
+  "link8.pdf",
+  "link9.pdf",
+  "link10.pdf",
+  "link11.pdf",
+  "link12.pdf",
+  "link13.pdf",
+  "link14.pdf",
+  "link15.pdf"*/
+];
+
+let englishChapters = [
+  /*
+  "A Letter to God",
+  "Nelson Mandela: Long Walk to Freedom",
+  "Two Stories About Flying",
+  "From the Diary of Anne Frank",
+  "The Hundred Dresses – I",
+  "The Hundred Dresses – II",
+  "Glimpses of India",
+  "Mijbil the Otter",
+  "Madam Rides the Bus",
+  "The Sermon at Benares",
+  "The Proposal",
+  "Dust of Snow",
+  "Fire and Ice",
+  "A Tiger in the Zoo",
+  "How to Tell Wild Animals",
+  "The Ball Poem",
+  "Amanda!",
+  "Animals",
+  "The Trees",
+  "Fog",
+  "The Tale of Custard the Dragon",
+  "For Anne Gregory"
+  */
+];
+let englishLinks = [/*
+  
+  "link1.pdf",
+  "link2.pdf",
+  "link3.pdf",
+  "link4.pdf",
+  "link5.pdf",
+  "link6.pdf",
+  "link7.pdf",
+  "link8.pdf",
+  "link9.pdf",
+  "link10.pdf",
+  "link11.pdf",
+  "link12.pdf",
+  "link13.pdf",
+  "link14.pdf",
+  "link15.pdf",
+  "link16.pdf",
+  "link17.pdf",
+  "link18.pdf",
+  "link19.pdf",
+  "link20.pdf",
+  "link21.pdf",
+  "link22.pdf"*/
+];
+
+let socialScienceChapters = [
+  "Development",
+  /*
+  "The Rise of Nationalism in Europe",
+  "Nationalism in India",
+  "The Making of a Global World",
+  "The Age of Industrialisation",
+  "Print Culture and the Modern World",
+  "Resources and Development",
+  "Forest and Wildlife Resources",
+  "Water Resources",
+  "Agriculture",
+  "Minerals and Energy Resources",
+  "Manufacturing Industries",
+  "Lifelines of National Economy",
+  "Power Sharing",
+  "Federalism",
+  "Democracy and Diversity",
+  "Gender, Religion and Caste",
+  "Popular Struggles and Movements",
+  "Political Parties",
+  "Outcomes of Democracy",
+  "Challenges to Democracy",
+  "Sectors of the Indian Economy",
+  "Money and Credit",
+  "Globalisation and the Indian Economy",
+  "Consumer Rights"
+  */
+];
+let socialScienceLinks = [
+
+"/sst/eco.ch-1_watermark.pdf",
+/*
+  "link2.pdf",
+  "link3.pdf",
+  "link4.pdf",
+  "link5.pdf",
+  "link6.pdf",
+  "link7.pdf",
+  "link8.pdf",
+  "link9.pdf",
+  "link10.pdf",
+  "link11.pdf",
+  "link12.pdf",
+  "link13.pdf",
+  "link14.pdf",
+  "link15.pdf",
+  "link16.pdf",
+  "link17.pdf",
+  "link18.pdf",
+  "link19.pdf",
+  "link20.pdf",
+  "link21.pdf",
+  "link22.pdf",
+  "link23.pdf",
+  "link24.pdf",
+  "link25.pdf"*/
+];
+
+let hindiChapters = [
+  /*
+  "पाठ 1 - सूरदास",
+  "पाठ 2 - तुलसीदास",
+  "पाठ 3 - जयशंकर प्रसाद",
+  "पाठ 4 - सियारामशरण गुप्त",
+  "पाठ 5 - बच्चन",
+  "पाठ 6 - हरिवंशराय बच्चन",
+  "पाठ 7 - कविता की विशेषताएँ",
+  "पाठ 8 - निबंध लेखन",
+  "पाठ 9 - पत्र लेखन",
+  "पाठ 10 - नाटक"
+  */
+];
+let hindiLinks = [/*
+  "link1.pdf",
+  "link2.pdf",
+  "link3.pdf",
+  "link4.pdf",
+  "link5.pdf",
+  "link6.pdf",
+  "link7.pdf",
+  "link8.pdf",
+  "link9.pdf",
+  "link10.pdf"*/
+];
+
+  function Chapters(){
+    document.querySelector('.subjects').innerHTML=``;
+    let clickedSubject=localStorage.getItem("Subject");
+    let links;
+    let chapters;
+    if(clickedSubject=="Science"){
+      chapters=scienceChapters;
+      links=scienceLinks;
+    }
+    else if(clickedSubject == "Social Science") {
+  chapters = socialScienceChapters;
+  links = socialScienceLinks;
+}
+else if(clickedSubject == "Maths") {
+  chapters = mathsChapters;
+  links = mathsLinks;
+}
+  else if(clickedSubject == "English") {
+  chapters = englishChapters;
+  links = englishLinks;
+}
+else if(clickedSubject == "Hindi") {
+  chapters = hindiChapters;
+  links = hindiLinks;
+}
+if(links.length<=0){
+document.querySelector('.subjects').innerHTML+=`<div>Sorry! currently no notes are available</div></a>`
+}
+else{
+  
+
+    for(let i=0;i<links.length;i++){
+      document.querySelector('.subjects').innerHTML+=`<a href='${links[i]}'><div>${chapters[i]}</div></a>`
+    }
+}
+  }
+  Chapters();
+</script>
+
+</html>
