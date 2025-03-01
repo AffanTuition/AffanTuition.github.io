@@ -33,7 +33,7 @@ top:0px;
 <body>
     <header>
     <div>
-      <h2>NOTES LE LO NOTES !</h2>
+      <h2>📚 NOTES LE LO NOTES! 📚</h2>
     </div>
 
   </header>
@@ -67,10 +67,10 @@ top:0px;
   "Management of Natural Resources"*/
 ];
 let scienceLinks = [
-  "scienceCh-1.pdf",
-  "sciencePhysicsFormulae.pdf",
-  "science.ch-4.pdf",
-  "scienceCh-11.pdf",
+  "/science/scienceCh-1.pdf",
+  "/science/sciencePhysicsFormulae.pdf",
+  "/science/science.ch-4.pdf",
+  "/science/scienceCh-11.pdf",
  /* "link2.pdf",
   "link3.pdf",
   "link4.pdf",
@@ -209,7 +209,7 @@ let socialScienceChapters = [
 ];
 let socialScienceLinks = [
 
-"eco.ch-1_watermark.pdf",
+"/sst/eco.ch-1_watermark.pdf",
 /*
   "link2.pdf",
   "link3.pdf",
@@ -289,9 +289,13 @@ else if(clickedSubject == "Hindi") {
   chapters = hindiChapters;
   links = hindiLinks;
 }
-if(links.length<=0){
-document.querySelector('.subjects').innerHTML+=`<div>Sorry! currently no notes are available</div></a>`
-}
+  if(links.length <= 0) {
+      document.querySelector('.subjects').innerHTML += `
+          <div style="color: red; font-size: 18px; text-shadow: 0 0 10px red;">
+              🚫 Sorry! Currently, no notes are available. 🚫
+          </div>`;
+  }
+
 else{
   
 
