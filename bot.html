@@ -3,23 +3,306 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer Support Bot</title>
-    <link rel="stylesheet" type="text/css" href="bot.css">
+    <title>Tuition Customer Support</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Use existing website styling -->
+    <style>
+        /* Chat Window */
+        .chat-window {
+            width: 90%;
+            max-width: 500px;
+            margin: 50px auto;
+            background: white;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .chat-container {
+            padding: 15px;
+            height: 300px;
+            overflow-y: auto;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .chat-message {
+            background: #f1f1f1;
+            padding: 8px;
+            border-radius: 5px;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .user-message {
+            background: #3498db;
+            color: white;
+            text-align: right;
+        }
+
+        /* Query Options */
+        #options-container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 10px;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .option-btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+
+        /* Search Bar */
+        .search-box {
+            display: flex;
+            padding: 10px;
+            background: #f9f9f9;
+            border-top: 1px solid #ddd;
+        }
+
+        #search-input {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        #search-button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-left: 5px;
+            border-radius: 5px;
+        }
+    /* Mobile Menu Styling */
+#mobile-menu {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: -100%; /* Initially hidden */
+    width: 250px;
+    height: 100vh;
+    background: rgba(35, 74, 145, 0.9); /* Slight transparency */
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    transition: left 0.4s ease-in-out;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+}
+
+/* Show menu when active */
+#mobile-menu.active {
+    left: 0;
+    visibility: visible;
+}
+
+/* Navigation Links */
+#mobile-menu ul {
+    padding: 0;
+    list-style: none;
+    margin-top: 20px;
+}
+
+#mobile-menu li {
+    margin: 15px 0;
+}
+
+#mobile-menu a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+#mobile-menu a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Close Button */
+#cut {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#cut:hover {
+    background: #ff4d4d;
+}
+
+/* Close Icon */
+#cut div {
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    background: #234a91;
+    transition: background 0.3s ease;
+}
+
+#cut1 {
+    transform: rotate(45deg);
+}
+
+#cut2 {
+    transform: rotate(-45deg);
+}
+
+/* Hamburger Icon */
+.menu-toggle {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 101;
+    cursor: pointer;
+    background: #234a91;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.menu-toggle:hover {
+    background: #47b9ff;
+}
+
+.menu-toggle .hamburger,
+.menu-toggle .hamburger::before,
+.menu-toggle .hamburger::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 4px;
+    background: white;
+    border-radius: 5px;
+    margin: 6px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Animate hamburger to 'X' when active */
+.menu-toggle.active .hamburger {
+    background: transparent;
+}
+
+.menu-toggle.active .hamburger::before {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.menu-toggle.active .hamburger::after {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+    </style>
 </head>
 <body>
+<header>
+            <div class="menu-toggle">
+            <div class="hamburger"></div>
+        </div>
+        <div id="mobile-menu">
+            <div id='cut'>
+                <div id='cut1'></div>
+                <div id='cut2'></div>
+            </div>
+            <ul>
+                <li><a href="notes.html">NOTES</a></li>
+                             <li><a href="index.html">Home</a></li>
+
+              <li><a href="gallery.html">Image Gallery</a></li>
+              <li><a href="current_status.html">Open/Close</a></li>
+              <li><a href="homework.html">Homework</a></li>
+              <li><a href="thought.html">Thoughts</a></li>
+              <li><a href="bot.html">Customer Support</a></li>
+              <li><a href="game.html">Games</a></li>
+              <li><a href="studytool.html">Study Tool</a></li>
+            </ul>
+
+        </div>
+
+</header>
+    <!-- Chat Window -->
     <div class="chat-window">
         <div class="chat-container" id="chat-container">
-            <!-- Bot messages will be displayed here -->
+            <div class="chat-message">Welcome to Tuition Support! How can I help you?</div>
         </div>
-        
+
+        <!-- Query Options -->
         <div id="options-container">
-            <!-- Query options will be displayed here -->
+            <button class="option-btn" onclick="sendQuery('Class timings')">Class Timings</button>
+            <button class="option-btn" onclick="sendQuery('Fee structure')">Fee Structure</button>
+            <button class="option-btn" onclick="sendQuery('Subjects covered')">Subjects Covered</button>
+            <button class="option-btn" onclick="sendQuery('Contact details')">Contact Details</button>
+            <button class="option-btn" onclick="sendQuery('How to enroll?')">How to Enroll?</button>
         </div>
-        <div style="margin-top: 20px;"> <!-- Adjusted margin for better spacing -->
-            <input style="margin-bottom:-15px;"type="text" id="search-input" placeholder="Search...">
-            <button style="margin-bottom:-7px;" id="search-button">Search</button>
+
+        <!-- Search Bar -->
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="Ask a question...">
+            <button id="search-button" onclick="searchQuery()">Search</button>
         </div>
     </div>
-    <script src="bot.js"></script>
+
+    <script>
+        let ham=document.querySelector('.menu-toggle');
+                 let menu=document.querySelector('#mobile-menu');
+                 ham.addEventListener("click",()=>{
+                     menu.classList.toggle('active');
+                     console.log('clicked');
+                 })
+        let cross=document.querySelector('#cut')
+                 cross.addEventListener('click',()=>{
+                     menu.classList.toggle('active');
+                 })
+        function sendQuery(query) {
+            let chatContainer = document.getElementById("chat-container");
+            chatContainer.innerHTML += `<div class="chat-message user-message">${query}</div>`;
+
+            setTimeout(() => {
+                let response = getResponse(query);
+                chatContainer.innerHTML += `<div class="chat-message">${response}</div>`;
+                chatContainer.scrollTop = chatContainer.scrollHeight;
+            }, 1000);
+        }
+
+        function searchQuery() {
+            let query = document.getElementById("search-input").value;
+            if (query.trim() === "") return;
+            sendQuery(query);
+            document.getElementById("search-input").value = "";
+        }
+
+        function getResponse(query) {
+            let responses = {
+                "Class timings": "Our classes run from 7 AM to 9 AM, Monday to Saturday.",
+                "Fee structure": "The tuition fee varies by grade level(₹500-₹700). Please contact us for details.",
+                "Subjects covered": "We cover Mathematics, Science, English,Social Science, Hindi and more.",
+                "Contact details": "You can reach us at support@tuitionwebsite.com or call 9876543210.",
+                "How to enroll?": "Visit our website and fill out the enrollment form or contact our office."
+            };
+            return responses[query] || "I'm not sure about that. Please contact us through email or call.";
+        }
+    </script>
+
 </body>
 </html>
