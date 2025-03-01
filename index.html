@@ -3,7 +3,8 @@
 <head>
     <title>Affan's Tuition</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-  <link rel="stylesheet" type="text/css" href="advance.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
 
     <style>
@@ -27,7 +28,7 @@
         }
 
         /* Animation for the first text */
-        .animate-text1 {
+        /*.animate-text1 {
             animation: dropText 3s ease-in-out forwards;
             font-family: 'Your-Desired-Font', sans-serif; /* Add your desired font here */
         }
@@ -46,51 +47,79 @@
             cursor: pointer;
         }
 
-        /* Additional styles for the hamburger icon */
-        .menu-toggle {
-            position: fixed;
-            top: 0;
-            left: 0;
-            margin: 10px;
-            z-index: 100;
-        }
+        /* Footer Section */
+.footer {
+    background: linear-gradient(to right, #234a91, #47b9ff);
+    color: white;
+    text-align: center;
+    box-sizing:border-box;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Developer Name Styling */
+.developer-name {
+    font-weight: bold;
+    color: #ffeb3b; /* Light yellow for contrast */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover Effect */
+.developer-name:hover {
+    color: #ffcc00;
+    transform: scale(1.1);
+}
+
     </style>
+
 </head>
-<body>
+    <body>
+        
     <header class="header">
-        <img src="photo.jpg" alt="Affan's Tuition Logo">
-        <h1 class="animate-text1">Welcome to Affan's Tuition</h1>
+                <div id='cover'></div>
+        <img src="image_search_1738158888796.png" alt="Affan's Tuition Logo">
+<div id='headH1'>
+    <h1>Welcome to Affan's Tuition</h1>
+        <h1>Where Journey Starts Today! </h1>
+</div>
+        
+     <!--  
         <p class="animate-text2" id="text2" >This Website is developed by Md Fidaur Rahman</p>
+        -->
         <div class="menu-toggle">
             <div class="hamburger"></div>
         </div>
         
     </header>
-    <nav class="navigation">
-        <ul>
-            <li><a href="notes.html">NOTES</a></li>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="gallery.html">Image Gallery</a></li>
-          <li><a href="current_status.html">Open/Close</a></li>
-          <li><a href="homework.html">Homework</a></li>
-          <li><a href="thought.html">Thoughts</a></li>
-          <li><a href="bot.html">Customer Support</a></li>
-          <li><a href="game.html">Games</a></li>
-        </ul>
-    </nav>
-  <main class="news-section">
+    
+  <main>
     <div class="news-card">
         <img src="news.img.jpg" alt="News Image" class="news-img">
         <div class="news-content">
             <h3 class="news-title">Tuition Close</h3>
             <p class="news-description">Tuition is closed till 13th November</p>
         </div>
+        
+
     </div>
 
     
     <!-- Additional news posts -->
-    <div class="mobile-menu">
+    <div id="mobile-menu">
+        <div id='cut'>
+            <div id='cut1'></div>
+            <div id='cut2'></div>
+        </div>
         <ul>
+            <li><a href="notes.html">NOTES</a></li>
+             <li><a href="form.html">Enroll Now</a></li>
+                         <li><a href="routine.html">Routine</a></li>
+              <li><a href="quiz.html">QUIZ</a></li>   
             <li><a href="#about">About Us</a></li>
             <li><a href="#contact">Contact</a></li>
           <li><a href="gallery.html">Image Gallery</a></li>
@@ -99,8 +128,10 @@
           <li><a href="thought.html">Thoughts</a></li>
           <li><a href="bot.html">Customer Support</a></li>
           <li><a href="game.html">Games</a></li>
-          <li><a href="studytool.html">Study Tool</a></li>
+          <li><a href="studytool.html">Study Tool</a></li>   
+        
         </ul>
+        
     </div>
     <section id="about" class="section about-section">
         <h2>About Us</h2>
@@ -116,20 +147,24 @@
         <p>Phone: +91 9852766154</p>
         <p>Email: <a href="mailto:mdaffanshoaib@gmail.com">mdaffanshoaib@gmail.com</a></p>
     </section>
-    
-        
+        <footer class="footer">
+            <p>Developed with ❤️ by <a href="https://www.linkedin.com/in/md-fidaur-rahman-813778346?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><span class="developer-name">FIDAUR</span></a></p>
+        </footer>
+
      
        
      <script>
       
-      const menuToggle = document.querySelector('.menu-toggle');
-        const mobileMenu = document.querySelector('.mobile-menu'); 
-
-        menuToggle.addEventListener('click', () => {
-             mobileMenu.classList.toggle('active');
- 
-                                    });
-       
+         let ham=document.querySelector('.menu-toggle');
+         let menu=document.querySelector('#mobile-menu');
+         ham.addEventListener("click",()=>{
+             menu.classList.toggle('active');
+             console.log('clicked');
+         })
+let cross=document.querySelector('#cut')
+         cross.addEventListener('click',()=>{
+             menu.classList.toggle('active');
+         })
     </script>
 </body>
 </html>
