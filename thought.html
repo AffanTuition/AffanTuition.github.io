@@ -1,28 +1,322 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Affan's Tuition - Thoughts</title>
-    <link rel="stylesheet" type="text/css" href="thought.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Same CSS as Homework Page -->
+    <style>
+        /* Mobile Menu */
+            /* Mobile Menu Styling */
+#mobile-menu {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: -100%; /* Initially hidden */
+    width: 250px;
+    height: 100vh;
+    background: rgba(35, 74, 145, 0.9); /* Slight transparency */
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    transition: left 0.4s ease-in-out;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+}
+
+/* Show menu when active */
+#mobile-menu.active {
+    left: 0;
+    visibility: visible;
+}
+
+/* Navigation Links */
+#mobile-menu ul {
+    padding: 0;
+    list-style: none;
+    margin-top: 20px;
+}
+
+#mobile-menu li {
+    margin: 15px 0;
+}
+
+#mobile-menu a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+#mobile-menu a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Close Button */
+#cut {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#cut:hover {
+    background: #ff4d4d;
+}
+
+/* Close Icon */
+#cut div {
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    background: #234a91;
+    transition: background 0.3s ease;
+}
+
+#cut1 {
+    transform: rotate(45deg);
+}
+
+#cut2 {
+    transform: rotate(-45deg);
+}
+
+/* Hamburger Icon */
+.menu-toggle {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 101;
+    cursor: pointer;
+    background: #234a91;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.menu-toggle:hover {
+    background: #47b9ff;
+}
+
+.menu-toggle .hamburger,
+.menu-toggle .hamburger::before,
+.menu-toggle .hamburger::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 4px;
+    background: white;
+    border-radius: 5px;
+    margin: 6px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Animate hamburger to 'X' when active */
+.menu-toggle.active .hamburger {
+    background: transparent;
+}
+
+.menu-toggle.active .hamburger::before {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.menu-toggle.active .hamburger::after {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+
+        
+        /* Thought of the Day */
+        .thought-container {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            margin: 80px auto 20px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        .thought-container h2 {
+            color: #3498db;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .thought-text {
+            font-size: 20px;
+            font-weight: bold;
+            color: #2c35e0;
+        }
+
+        .refresh-button {
+            margin-top: 10px;
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        /* Thought Carousel */
+        .carousel-container {
+            margin: 20px auto;
+            width: 90%;
+            max-width: 600px;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            position: relative;
+        }
+
+        .carousel-thought {
+            font-size: 18px;
+            padding: 10px;
+            color: #2c3e50;
+            font-weight: bold;
+            min-height: 50px;
+        }
+
+        .carousel-button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 18px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .prev {
+            left:5px;
+        }
+
+        .next {
+            right: 5px;
+        }
+
+    </style>
 </head>
 <body>
-    <header class="header">
-        <h1>Thoughts for the Day</h1>
-    </header>
 
-    <section class="thought-of-the-day">
+    <!-- Mobile Menu -->
+<header>
+            <div class="menu-toggle">
+            <div class="hamburger"></div>
+        </div>
+        <div id="mobile-menu">
+            <div id='cut'>
+                <div id='cut1'></div>
+                <div id='cut2'></div>
+            </div>
+            <ul>
+                <li><a href="notes.html">NOTES</a></li>
+                             <li><a href="index.html">Home</a></li>
+
+              <li><a href="gallery.html">Image Gallery</a></li>
+              <li><a href="current_status.html">Open/Close</a></li>
+              <li><a href="homework.html">Homework</a></li>
+              <li><a href="thought.html">Thoughts</a></li>
+              <li><a href="bot.html">Customer Support</a></li>
+              <li><a href="game.html">Games</a></li>
+              <li><a href="studytool.html">Study Tool</a></li>
+            </ul>
+
+        </div>
+
+</header>
+
+    <!-- Thought of the Day -->
+    <div class="thought-container">
         <h2>Thought of the Day</h2>
-        <p>Today's Thought: "Your Thoughts Shape Your Reality."</p>
-    </section>
+        <p class="thought-text" id="thought-of-the-day">Loading...</p>
+        <button class="refresh-button" onclick="generateRandomThought()">Refresh</button>
+    </div>
 
-    <section class="other-thoughts">
-        <h2>Other Thoughts</h2>
-        <div class="thought">
-            <p>Thought 1: "Education is the most powerful weapon which you can use to change the world."</p>
-        </div>
-        <div class="thought">
-            <p>Thought 2: "The future belongs to those who believe in the beauty of their dreams."</p>
-        </div>
-        <!-- Add more thoughts below -->
-    </section>
+    <!-- Thought Carousel -->
+    <div class="carousel-container">
+        <h2>More Thoughts</h2>
+        <button class="carousel-button prev" onclick="prevThought()">&#10094;</button>
+        <p class="carousel-thought" id="carousel-thought">Loading...</p>
+        <button class="carousel-button next" onclick="nextThought()">&#10095;</button>
+    </div>
+
+    <script>
+        let ham=document.querySelector('.menu-toggle');
+                 let menu=document.querySelector('#mobile-menu');
+                 ham.addEventListener("click",()=>{
+                     menu.classList.toggle('active');
+                     console.log('clicked');
+                 })
+        let cross=document.querySelector('#cut')
+                 cross.addEventListener('click',()=>{
+                     menu.classList.toggle('active');
+                 })
+
+        // Thought of the Day (changes daily)
+        const thoughts = [
+            "Your thoughts shape your reality.",
+            "Believe in yourself, and the world will believe in you.",
+            "Each day is a new opportunity to improve yourself.",
+            "Be the change you want to see in the world.",
+            "Your mindset determines your success.",
+            "The best way to predict your future is to create it.",
+            "Do something today that your future self will thank you for."
+        ];
+
+        function getDailyThought() {
+            let date = new Date();
+            let index = date.getDate() % thoughts.length; // Changes daily
+            document.getElementById("thought-of-the-day").innerText = thoughts[index];
+        }
+
+        function generateRandomThought() {
+            let randomIndex = Math.floor(Math.random() * thoughts.length);
+            document.getElementById("thought-of-the-day").innerText = thoughts[randomIndex];
+        }
+
+        // Carousel Logic
+        let currentIndex = 0;
+        
+        function updateCarousel() {
+            document.getElementById("carousel-thought").innerText = thoughts[currentIndex];
+        }
+
+        function prevThought() {
+            currentIndex = (currentIndex - 1 + thoughts.length) % thoughts.length;
+            updateCarousel();
+        }
+
+        function nextThought() {
+            currentIndex = (currentIndex + 1) % thoughts.length;
+            updateCarousel();
+        }
+
+        // Initialize page
+        getDailyThought();
+        updateCarousel();
+    </script>
+
 </body>
 </html>
