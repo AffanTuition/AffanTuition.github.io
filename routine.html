@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuition Routine - Classes 5 to 10</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .routine-container {
+            background: white;
+            max-width: 900px;
+            width: 100%;
+            padding: 20px;
+            padding-left:15px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .tab {
+            padding: 10px 15px;
+            cursor: pointer;
+            background: #007bff;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .tab.active {
+            background: #0056b3;
+            font-weight: bold;
+        }
+
+        .routine-table {
+            width: 100%;
+            border-collapse: collapse;
+            display: none;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        th {
+            background: #007bff;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .highlight {
+            background: #ffdd57 !important;
+            font-weight: bold;
+        }
+
+        .active-table {
+            display: table;
+        }
+
+        @media (max-width: 500px) {
+            th, td {
+                font-size: 14px;
+                padding: 8px;
+            }
+            .tabs {
+                flex-wrap: wrap;
+                gap: 5px;
+            }
+            .tab {
+                font-size: 14px;
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="routine-container">
+        <h2>Tuition Routine - Classes 5 to 10</h2>
+
+        <div class="tabs">
+            <div class="tab active" onclick="showRoutine(5)">Class 5</div>
+            <div class="tab" onclick="showRoutine(6)">Class 6</div>
+            <div class="tab" onclick="showRoutine(7)">Class 7</div>
+            <div class="tab" onclick="showRoutine(8)">Class 8</div>
+            <div class="tab" onclick="showRoutine(9)">Class 9</div>
+            <div class="tab" onclick="showRoutine(10)">Class 10</div>
+        </div>
+
+        <!-- Routine Tables -->
+        <div id="class-5" class="routine-table active-table">
+            <table>
+                <tr><th>Day</th><th>Subject 1</th><th>Subject 2</th><th>Subject 3</th></tr>
+                <tr><td>Monday</td><td>Math</td><td>English</td><td>EVS</td></tr>
+                <tr><td>Tuesday</td><td>Hindi</td><td>Math</td><td>Science</td></tr>
+                <tr><td>Wednesday</td><td>Social Studies</td><td>English</td><td>Drawing</td></tr>
+                <tr><td>Thursday</td><td>Science</td><td>Math</td><td>Hindi</td></tr>
+                <tr><td>Friday</td><td>English</td><td>EVS</td><td>Social Studies</td></tr>
+                <tr><td>Saturday</td><td>Math</td><td>Science</td><td>Activity</td></tr>
+                <tr><td>Sunday</td><td>Revision</td><td>Mock Test</td><td>Doubt Session</td></tr>
+            </table>
+        </div>
+
+        <div id="class-6" class="routine-table">
+            <table>
+                <tr><th>Day</th><th>Subject 1</th><th>Subject 2</th><th>Subject 3</th></tr>
+                <tr><td>Monday</td><td>Math</td><td>Science</td><td>English</td></tr>
+                <tr><td>Tuesday</td><td>Social Studies</td><td>Math</td><td>Hindi</td></tr>
+                <tr><td>Wednesday</td><td>Science</td><td>English</td><td>Computer</td></tr>
+                <tr><td>Thursday</td><td>Math</td><td>Social Studies</td><td>Hindi</td></tr>
+                <tr><td>Friday</td><td>Science</td><td>English</td><td>Computer</td></tr>
+                <tr><td>Saturday</td><td>Math</td><td>Science</td><td>English</td></tr>
+                <tr><td>Sunday</td><td>Revision</td><td>Mock Test</td><td>Doubt Session</td></tr>
+            </table>
+        </div>
+<div id="class-7" class="routine-table">
+            <table>
+                <tr><th>Day</th><th>Subject 1</th><th>Subject 2</th><th>Subject 3</th></tr>
+                <tr><td>Monday</td><td>Math</td><td>Science</td><td>English</td></tr>
+                <tr><td>Tuesday</td><td>Social Studies</td><td>Math</td><td>Hindi</td></tr>
+                <tr><td>Wednesday</td><td>Science</td><td>English</td><td>Computer</td></tr>
+                <tr><td>Thursday</td><td>Math</td><td>Social Studies</td><td>Hindi</td></tr>
+                <tr><td>Friday</td><td>Science</td><td>English</td><td>Computer</td></tr>
+                <tr><td>Saturday</td><td>Math</td><td>Science</td><td>English</td></tr>
+                <tr><td>Sunday</td><td>Revision</td><td>Mock Test</td><td>Doubt Session</td></tr>
+            </table>
+</div>
+        <div id="class-8" class="routine-table">
+            <table>
+                <tr><th>Day</th><th>Subject 1</th><th>Subject 2</th><th>Subject 3</th></tr>
+                <tr><td>Monday</td><td>Math</td><td>Science</td><td>English</td></tr>
+                <tr><td>Tuesday</td><td>Social Studies</td><td>Math</td><td>Hindi</td></tr>
+                <tr><td>Wednesday</td><td>Science</td><td>English</td><td>Computer</td></tr>
+                <tr><td>Thursday</td><td>Math</td><td>Social Studies</td><td>Hindi</td></tr>
+                <tr><td>Friday</td><td>Science</td><td>English</td><td>Computer</td></tr>
+                <tr><td>Saturday</td><td>Math</td><td>Science</td><td>English</td></tr>
+                <tr><td>Sunday</td><td>Revision</td><td>Mock Test</td><td>Doubt Session</td></tr>
+            </table>
+        </div>
+        <div id="class-9" class="routine-table">
+            <table>
+                <tr><th>Day</th><th>Subject 1</th><th>Subject 2</th><th>Subject 3</th></tr>
+                <tr><td>Monday</td><td>Math</td><td>Science</td><td>English</td></tr>
+                <tr><td>Tuesday</td><td>Social Studies</td><td>Math</td><td>Hindi</td></tr>
+                <tr><td>Wednesday</td><td>Science</td><td>English</td><td>Computer</td></tr>
+                <tr><td>Thursday</td><td>Math</td><td>Social Studies</td><td>Hindi</td></tr>
+                <tr><td>Friday</td><td>Science</td><td>English</td><td>Computer</td></tr>
+                <tr><td>Saturday</td><td>Math</td><td>Science</td><td>English</td></tr>
+                <tr><td>Sunday</td><td>Revision</td><td>Mock Test</td><td>Doubt Session</td></tr>
+            </table>
+        </div>
+        <div id="class-10" class="routine-table">
+            <table>
+                <tr><th>Day</th><th>Subject 1</th><th>Subject 2</th><th>Subject 3</th></tr>
+                <tr><td>Monday</td><td>Math</td><td>Science</td><td>English</td></tr>
+                <tr><td>Tuesday</td><td>Social Studies</td><td>Math</td><td>Hindi</td></tr>
+                <tr><td>Wednesday</td><td>Science</td><td>English</td><td>Computer</td></tr>
+                <tr><td>Thursday</td><td>Math</td><td>Social Studies</td><td>Hindi</td></tr>
+                <tr><td>Friday</td><td>Science</td><td>English</td><td>Computer</td></tr>
+                <tr><td>Saturday</td><td>Math</td><td>Science</td><td>English</td></tr>
+                <tr><td>Sunday</td><td>Revision</td><td>Mock Test</td><td>Doubt Session</td></tr>
+            </table>
+        </div>
+        <!-- Add similar tables for Classes 7 to 10 -->
+
+    </div>
+
+    <script>
+        function showRoutine(classNumber) {
+            let tables = document.querySelectorAll(".routine-table");
+            let tabs = document.querySelectorAll(".tab");
+
+            tables.forEach(table => table.classList.remove("active-table"));
+            tabs.forEach(tab => tab.classList.remove("active"));
+
+            document.getElementById(`class-${classNumber}`).classList.add("active-table");
+            event.target.classList.add("active");
+        }
+
+        function highlightToday() {
+            let tables = document.querySelectorAll(".routine-table table");
+            let todayIndex = new Date().getDay(); // 0 = Sunday, 6 = Saturday
+
+            tables.forEach(table => {
+                let rows = table.getElementsByTagName("tr");
+                if (todayIndex === 0) {
+                    rows[7].classList.add("highlight"); // Highlight
+                } else {
+                    rows[todayIndex].classList.add("highlight"); // Highlight current day
+                }
+            });
+        }
+
+        highlightToday();
+    </script>
+
+</body>
+</html>
