@@ -89,15 +89,107 @@
         ticTacToeOption.href = "tic-tac-toe.html"; // Update the href as per your requirement
         ticTacToeOption.style.color = "#fff"; // Apply your desired styles
         ticTacToeOption.style.fontSize = "1.2em";
-        ticTacToeOption.style.padding = "15px 30px";
-        ticTacToeOption.style.borderRadius = "5px";
-        ticTacToeOption.style.backgroundColor = "#008CBA"; // Blue button color
-        ticTacToeOption.addEventListener("mouseover", function() {
-            ticTacToeOption.style.backgroundColor = "#007B9A"; // Darker blue on hover
-        });
-        ticTacToeOption.addEventListener("mouseout", function() {
-            ticTacToeOption.style.backgroundColor = "#008CBA"; // Restore original color on mouseout
-        });
-    </script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Learning Games</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-image: url('game-background.jpg'); /* Change to a new educational-themed image */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .game-container {
+            max-width: 900px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        h1 {
+            font-size: 2.2em;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .game-options {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .game-box {
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            padding: 15px 25px;
+            font-size: 1.2em;
+            border-radius: 8px;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 220px;
+            height: 60px;
+        }
+
+        .game-box:hover {
+            background: #0056b3;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 600px) {
+            .game-box {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="game-container">
+        <h1>Welcome to Fun Learning Games!</h1>
+        <h2>Choose a game to play and learn</h2>
+        
+        <div class="game-options">
+            <a class="game-box" href="tic-tac-toe.html">Tic Tac Toe</a>
+            <a class="game-box" href="rockpaperscissor.html">Rock Paper Scissors</a>
+            <a class="game-box" href="math-quiz.html">Math Quiz</a>
+            <a class="game-box" href="word-puzzle.html">Word Puzzle</a>
+            <a class="game-box" href="memory-game.html">Memory Challenge</a>
+            <a class="game-box" href="chess.html">Play Chess</a>
+        </div>
+    </div>
+
 </body>
 </html>
+
