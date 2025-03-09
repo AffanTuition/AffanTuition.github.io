@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Quiz Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f8f9fa;
+        }
+
+        .quiz-container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            width: 350px;
+        }
+
+        h1 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .question {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .input-box {
+            font-size: 1.2em;
+            padding: 10px;
+            width: 80%;
+            margin-bottom: 10px;
+            text-align: center;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+        }
+
+        .btn {
+            padding: 10px 15px;
+            font-size: 1em;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #218838;
+        }
+
+        .result {
+            font-size: 1.3em;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .correct {
+            color: green;
+        }
+
+        .wrong {
+            color: red;
+        }
+
+        .score {
+            font-size: 1.2em;
+            margin-top: 10px;
+            color: #555;
+        }
+
+        .timer {
+            font-size: 1.2em;
+            color: red;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="quiz-container">
+        <h1>Math Quiz</h1>
+        <div class="timer">Time Left: <span id="time">30</span>s</div>
+        <div class="question" id="question">Loading...</div>
+        <input type="number" class="input-box" id="answer" placeholder="Your Answer">
+        <button class="btn" id="submit">Submit</button>
+        <div class="result" id="result"></div>
+        <div class="score">Score: <span id="score">0</span></div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const questionElement = document.getElementById("question");
+            const answerElement = document.getElementById("answer");
+            const resultElement = document.getElementById("result");
+            const scoreElement = document.getElementById("score");
+            const timerElement = document.getElementById("time");
+            const submitButton = document.getElementById("submit");
+
+            let num1, num2, operator, correctAnswer;
+            let score = 0;
+            let timeLeft = 30;
+            let timer;
+
+            function generateQuestion() {
+                num1 = Math.floor(Math.random() * 20) + 1;
+                num2 = Math.floor(Math.random() * 20) + 1;
+                let operators = ["+", "-", "*", "/"];
+                operator = operators[Math.floor(Math.random() * operators.length)];
+
+                if (operator === "/") {
+                    num1 = num1 * num2; // Ensures division is always an integer
+                }
+
+                correctAnswer = eval(`${num1} ${operator} ${num2}`);
+                questionElement.textContent = `${num1} ${operator} ${num2} = ?`;
+                answerElement.value = "";
+            }
+
+            function startTimer() {
+                clearInterval(timer);
+                timer = setInterval(() => {
+                    if (timeLeft > 0) {
+                        timeLeft--;
+                        timerElement.textContent = timeLeft;
+                    } else {
+                        clearInterval(timer);
+                        alert("Time's up! Your final score: " + score);
+                        resetGame();
+                    }
+                }, 1000);
+            }
+
+            function checkAnswer() {
+                let userAnswer = parseFloat(answerElement.value);
+                if (!isNaN(userAnswer)) {
+                    if (userAnswer === correctAnswer) {
+                        resultElement.textContent = "Correct! 🎉";
+                        resultElement.className = "result correct";
+                        score += 10;
+                    } else {
+                        resultElement.textContent = "Wrong! 😢";
+                        resultElement.className = "result wrong";
+                        score -= 5;
+                    }
+                    scoreElement.textContent = score;
+                    generateQuestion();
+                }
+            }
+
+            function resetGame() {
+                score = 0;
+                timeLeft = 30;
+                scoreElement.textContent = score;
+                timerElement.textContent = timeLeft;
+                resultElement.textContent = "";
+                startTimer();
+                generateQuestion();
+            }
+
+            submitButton.addEventListener("click", checkAnswer);
+            answerElement.addEventListener("keypress", (event) => {
+                if (event.key === "Enter") {
+                    checkAnswer();
+                }
+            });
+
+            resetGame();
+        });
+    </script>
+
+</body>
+</html>

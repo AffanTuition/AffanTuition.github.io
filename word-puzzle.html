@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Puzzle Game</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { display: flex; justify-content: center; align-items: center; height: 100vh; background: #f8f9fa; }
+        .game-container { text-align: center; background: white; padding: 20px; border-radius: 10px; box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); width: 350px; }
+        h1 { font-size: 1.8em; margin-bottom: 15px; color: #333; }
+        .jumbled-word { font-size: 1.6em; font-weight: bold; margin-bottom: 15px; color: #007bff; }
+        .hint { font-size: 1.2em; margin-bottom: 10px; color: #555; }
+        .input-box { font-size: 1.2em; padding: 10px; width: 80%; margin-bottom: 10px; text-align: center; border: 2px solid #007bff; border-radius: 5px; }
+        .btn { padding: 10px 15px; font-size: 1em; background: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s; }
+        .btn:hover { background: #218838; }
+        .result { font-size: 1.3em; margin-top: 15px; font-weight: bold; }
+        .correct { color: green; }
+        .wrong { color: red; }
+        .score { font-size: 1.2em; margin-top: 10px; color: #555; }
+        .timer { font-size: 1.2em; color: red; font-weight: bold; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="game-container">
+        <h1>Word Puzzle</h1>
+        <div class="timer">Time Left: <span id="time">6</span>s</div>
+        <div class="jumbled-word" id="word">Loading...</div>
+        <div class="hint" id="hint">Hint: ???</div>
+        <input type="text" class="input-box" id="answer" placeholder="Your Answer">
+        <button class="btn" id="submit">Submit</button>
+        <div class="result" id="result"></div>
+        <div class="score">Score: <span id="score">0</span></div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let words = [
+                { word: "banana", hint: "A yellow fruit" }, { word: "elephant", hint: "A large animal" },
+                { word: "guitar", hint: "A musical instrument" }, { word: "laptop", hint: "A portable computer" },
+                { word: "oxygen", hint: "Essential for breathing" }, { word: "pencil", hint: "Used for writing" },
+                { word: "mirror", hint: "Reflects your image" }, { word: "umbrella", hint: "Used in rain" },
+                { word: "chocolate", hint: "Sweet and brown" }, { word: "diamond", hint: "Precious gemstone" },
+                { word: "python", hint: "A programming language" }, { word: "penguin", hint: "A flightless bird" },
+                { word: "library", hint: "A place with books" }, { word: "magnet", hint: "Attracts metal" },
+                { word: "compass", hint: "Shows direction" }, { word: "island", hint: "Land surrounded by water" },
+                { word: "butterfly", hint: "Colorful flying insect" }, { word: "cactus", hint: "A desert plant" },
+                { word: "volcano", hint: "Erupts lava" }, { word: "galaxy", hint: "A huge star system" },
+                { word: "telescope", hint: "Used to see distant objects" }, { word: "astronaut", hint: "Travels in space" },
+                { word: "rainbow", hint: "Appears after rain" }, { word: "waterfall", hint: "Falling water from height" },
+                { word: "treasure", hint: "Hidden valuable items" }, { word: "notebook", hint: "Used to take notes" },
+                { word: "fireworks", hint: "Used during celebrations" }, { word: "mountain", hint: "A high landform" },
+                { word: "whistle", hint: "A small object that makes sound" }, { word: "sandwich", hint: "A common fast food" },
+                { word: "bicycle", hint: "A two-wheeled vehicle" }, { word: "airplane", hint: "Used for flying" },
+                { word: "keyboard", hint: "Used for typing" }, { word: "backpack", hint: "Used to carry items" },
+                { word: "sunflower", hint: "A yellow flower" }, { word: "honeybee", hint: "Produces honey" },
+                { word: "volleyball", hint: "A sport played with a net" }, { word: "octopus", hint: "An eight-armed sea creature" },
+                { word: "tornado", hint: "A violent windstorm" }, { word: "strawberry", hint: "A red, juicy fruit" },
+                { word: "calculator", hint: "Used for mathematical calculations" }, { word: "kangaroo", hint: "An animal that hops" },
+                { word: "parachute", hint: "Used to slow down a fall" }, { word: "dictionary", hint: "Contains word meanings" },
+                { word: "microscope", hint: "Used to see tiny objects" }, { word: "scooter", hint: "A two-wheeled ride" },
+                { word: "television", hint: "Used for watching shows" }, { word: "satellite", hint: "Orbits the Earth" },
+                { word: "chessboard", hint: "Used for playing chess" }, { word: "scissors", hint: "Used for cutting" },
+                { word: "flashlight", hint: "A portable light source" }
+            ];
+
+
+            let usedWords = [];
+            let currentWord, correctAnswer;
+            let score = 0;
+            let timeLeft = 6;
+            let timer;
+
+            function shuffleWord(word) {
+                return word.split('').sort(() => Math.random() - 0.5).join('');
+            }
+
+            function getRandomWord() {
+                if (words.length === 0) {
+                    words = [...usedWords];
+                    usedWords = [];
+                }
+                let randomIndex = Math.floor(Math.random() * words.length);
+                let selectedWord = words.splice(randomIndex, 1)[0];
+                usedWords.push(selectedWord);
+                return selectedWord;
+            }
+
+            function generateWord() {
+                let randomWord = getRandomWord();
+                currentWord = shuffleWord(randomWord.word);
+                correctAnswer = randomWord.word;
+
+                document.getElementById("word").textContent = currentWord.toUpperCase();
+                document.getElementById("hint").textContent = "Hint: " + randomWord.hint;
+                document.getElementById("answer").value = "";
+                timeLeft = 6;
+                updateTimer();
+            }
+
+            function startTimer() {
+                clearInterval(timer);
+                timer = setInterval(() => {
+                    if (timeLeft > 0) {
+                        timeLeft--;
+                        updateTimer();
+                    } else {
+                        nextWord(false);
+                    }
+                }, 1000);
+            }
+
+            function updateTimer() {
+                document.getElementById("time").textContent = timeLeft;
+            }
+
+            function nextWord(correct) {
+                clearInterval(timer);
+                if (correct) {
+                    score += 10;
+                    document.getElementById("result").textContent = "Correct! 🎉";
+                    document.getElementById("result").className = "result correct";
+                } else {
+                    score -= 5;
+                    document.getElementById("result").textContent = "Time Up! ❌";
+                    document.getElementById("result").className = "result wrong";
+                }
+                document.getElementById("score").textContent = score;
+                setTimeout(() => {
+                    document.getElementById("result").textContent = "";
+                    generateWord();
+                    startTimer();
+                }, 1000);
+            }
+
+            function checkAnswer() {
+                let userAnswer = document.getElementById("answer").value.toLowerCase();
+                if (userAnswer) {
+                    if (userAnswer === correctAnswer) {
+                        nextWord(true);
+                    } else {
+                        document.getElementById("result").textContent = "Wrong! 😢";
+                        document.getElementById("result").className = "result wrong";
+                        score -= 5;
+                        document.getElementById("score").textContent = score;
+                        setTimeout(() => {
+                            document.getElementById("result").textContent = "";
+                            generateWord();
+                            startTimer();
+                        }, 1000);
+                    }
+                }
+            }
+
+            document.getElementById("submit").addEventListener("click", checkAnswer);
+            document.getElementById("answer").addEventListener("keypress", (event) => {
+                if (event.key === "Enter") {
+                    checkAnswer();
+                }
+            });
+
+            generateWord();
+            startTimer();
+        });
+    </script>
+
+</body>
+</html>
