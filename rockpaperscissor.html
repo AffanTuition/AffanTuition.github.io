@@ -4,28 +4,145 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
-    <link rel="stylesheet" type="text/css" href="rockpaperscissor.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f0f0f0;
+        }
+
+        .game-container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            width: 350px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .choices {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .choice {
+            width: 100px;
+            height: 100px;
+            background: #007bff;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .choice:hover {
+            background: #0056b3;
+            transform: scale(1.1);
+        }
+
+        .result {
+            font-size: 1.5em;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .winner {
+            color: green;
+        }
+
+        .loser {
+            color: red;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 15px;
+            font-size: 1em;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #218838;
+        }
+    </style>
 </head>
-  <style>
-
-    body {
-            background-image: url('game.jpg.jpg');
-            background-size: cover; /* Adjust as needed */
-            background-repeat: no-repeat;
-            background-attachment: fixed; /* Ensures the background stays fixed while scrolling */
-    }
-
-  </style>
 <body>
+
     <div class="game-container">
         <h1>Rock Paper Scissors</h1>
-        <div class="game-options">
-            <button id="rock">Rock</button>
-            <button id="paper">Paper</button>
-            <button id="scissors">Scissors</button>
+        <div class="choices">
+            <div class="choice" data-choice="rock">✊</div>
+            <div class="choice" data-choice="paper">✋</div>
+            <div class="choice" data-choice="scissors">✌</div>
         </div>
-        <div class="result" id="result"></div>
+        <div class="result">Make Your Move!</div>
+        <button id="reset">Play Again</button>
     </div>
-    <script src="rockpaperscissor.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const choices = document.querySelectorAll(".choice");
+            const resultDiv = document.querySelector(".result");
+            const resetBtn = document.getElementById("reset");
+            const options = ["rock", "paper", "scissors"];
+
+            function getWinner(player, computer) {
+                if (player === computer) return "It's a Draw!";
+                if (
+                    (player === "rock" && computer === "scissors") ||
+                    (player === "paper" && computer === "rock") ||
+                    (player === "scissors" && computer === "paper")
+                ) {
+                    return "You Win! 🎉";
+                } else {
+                    return "You Lose! 😢";
+                }
+            }
+
+            choices.forEach(choice => {
+                choice.addEventListener("click", () => {
+                    let playerChoice = choice.getAttribute("data-choice");
+                    let computerChoice = options[Math.floor(Math.random() * options.length)];
+                    
+                    let resultText = getWinner(playerChoice, computerChoice);
+                    
+                    resultDiv.textContent = `You: ${playerChoice} | Bot: ${computerChoice} - ${resultText}`;
+                    resultDiv.className = "result " + (resultText.includes("Win") ? "winner" : resultText.includes("Lose") ? "loser" : "");
+                });
+            });
+
+            resetBtn.addEventListener("click", () => {
+                resultDiv.textContent = "Make Your Move!";
+                resultDiv.className = "result";
+            });
+        });
+    </script>
+
 </body>
 </html>
