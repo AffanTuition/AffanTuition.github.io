@@ -1,245 +1,382 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI-Powered Quiz</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
-        .quiz-container {
-            width: 50%;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin-top: 50px;
-        }
-        button {
-            padding: 10px 20px;
-            margin: 10px;
-            font-size: 16px;
-            cursor: pointer;
-            background: #28a745;
-            color: white;
-            border: none;
-            border-radius: 5px;
-        }
-        button:hover {
-            background: #218838;
-        }
-        #options button {
-            display: block;
-            width: 100%;
-            margin: 5px 0;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI-Powered Quiz | Grand Launch</title>
+  <style>
+    /* ===== Global Styles ===== */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", Arial, sans-serif;
+      background: linear-gradient(135deg, #1c1f26, #232a36);
+      color: #f5f5f5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    h1, h2 {
+      margin: 0;
+    }
+
+    /* ===== Header Animation ===== */
+    .launch-banner {
+      width: 100%;
+      background: linear-gradient(90deg, #3a7bd5, #00d2ff);
+      color: #fff;
+      padding: 15px 0;
+      text-align: center;
+      font-size: 1.3rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      animation: glow 2s infinite alternate;
+      text-shadow: 0 0 10px rgba(255,255,255,0.6);
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #fff; }
+      to { text-shadow: 0 0 20px #00d2ff, 0 0 30px #3a7bd5; }
+    }
+
+    /* ===== Quiz Container ===== */
+    .quiz-container {
+      width: 90%;
+      max-width: 600px;
+      background: #2b2f3a;
+      padding: 25px 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+      margin-top: 40px;
+      text-align: center;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .quiz-container:hover {
+      box-shadow: 0 0 25px rgba(0, 210, 255, 0.4);
+    }
+
+    select, button {
+      font-size: 1rem;
+      margin: 10px 0;
+      padding: 10px 15px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+    }
+
+    select {
+      width: 100%;
+      background: #222;
+      color: #eee;
+      border: 1px solid #555;
+      cursor: pointer;
+    }
+
+    button {
+      background: linear-gradient(90deg, #00d2ff, #3a7bd5);
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      background: linear-gradient(90deg, #3a7bd5, #00d2ff);
+    }
+
+    #options button {
+      width: 100%;
+      margin: 8px 0;
+      background: #353a46;
+    }
+
+    #options button:hover {
+      background: #00d2ff;
+      color: #111;
+      font-weight: 600;
+    }
+
+    #timer {
+      margin-top: 10px;
+      color: #ffcd3c;
+      font-weight: 500;
+    }
+
+    #feedback {
+      margin-top: 15px;
+      white-space: pre-line;
+      font-weight: 500;
+    }
+
+    #result-screen {
+      animation: fadeIn 0.8s ease;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: scale(0.9);}
+      to {opacity: 1; transform: scale(1);}
+    }
+
+    footer {
+      margin-top: 30px;
+      font-size: 0.9rem;
+      color: #888;
+      letter-spacing: 0.5px;
+    }
+  </style>
 </head>
 <body>
-    <div class="quiz-container">
-        <h1>AI-Powered Quiz</h1>
+  <!-- Launch Banner -->
+  <div class="launch-banner">🚀 Grand Launch — AI-Powered Quiz | By Developer Fidaur 👨‍💻</div>
 
-        <!-- Subject & Chapter Selection -->
-        <div id="selection-screen">
-            <label for="subject">Choose Subject:</label>
-            <select id="subject">
-                <option value="Mathematics">Mathematics</option>
-                <option value="Science">Science</option>
-                <option value="Social Science">Social Science</option>
-                <option value="English">English</option>
-            </select>
+  <div class="quiz-container">
+    <h1>AI-Powered Quiz</h1>
 
-            <label for="chapter">Choose Chapter:</label>
-            <select id="chapter">
-                <option value="Trigonometry">Trigonometry</option>
-                <option value="Motion">Motion</option>
-                <option value="Democracy">Democracy</option>
-                <option value="Grammar">Grammar</option>
-            </select>
+    <!-- Subject & Chapter Selection -->
+    <div id="selection-screen">
+      <label for="subject">Choose Subject:</label>
+      <select id="subject">
+        <option value="Mathematics">Mathematics</option>
+        <option value="Science">Science</option>
+        <option value="Social Science">Social Science</option>
+        <option value="English">English</option>
+        <option value="Hindi">Hindi</option>
+      </select>
 
-            <button id="startQuiz">Start Quiz</button>
-        </div>
+      <label for="chapter">Choose Chapter:</label>
+      <select id="chapter">
+        <option value="Real Numbers">Real Numbers</option>
+        <option value="Polynomials">Polynomials</option>
+        <option value="Pair of Linear Equations in Two Variables">Pair of Linear Equations in Two Variables</option>
+        <option value="Quadratic Equations">Quadratic Equations</option>
+        <option value="Arithmetic Progressions">Arithmetic Progressions</option>
+        <option value="Triangles">Triangles</option>
+        <option value="Coordinate Geometry">Coordinate Geometry</option>
+        <option value="Introduction to Trigonometry">Introduction to Trigonometry</option>
+        <option value="Some Applications of Trigonometry">Some Applications of Trigonometry</option>
+        <option value="Circles">Circles</option>
+        <option value="Constructions">Constructions</option>
+        <option value="Areas Related to Circles">Areas Related to Circles</option>
+        <option value="Surface Areas and Volumes">Surface Areas and Volumes</option>
+        <option value="Statistics">Statistics</option>
 
-        <!-- Quiz Section (Hidden Initially) -->
-        <div id="quiz-screen" style="display:none;">
-            <h2 id="question"></h2>
-            <div id="options"></div>
-            <p id="timer">Time Left: <span id="time">30</span> sec</p>
-            <p id="feedback"></p>
-            <button id="nextQuestion" style="display:none;">Next</button>
-        </div>
+        <option value="Chemical Reactions and Equations">Chemical Reactions and Equations</option>
+        <option value="Acids, Bases and Salts">Acids, Bases and Salts</option>
+        <option value="Metals and Non-Metals">Metals and Non-Metals</option>
+        <option value="Carbon and its Compounds">Carbon and its Compounds</option>
+        <option value="Life Processes">Life Processes</option>
+        <option value="Control and Coordination">Control and Coordination</option>
+        <option value="How Do Organisms Reproduce?">How Do Organisms Reproduce?</option>
+        <option value="Heredity and Evolution">Heredity and Evolution</option>
+        <option value="Light — Reflection and Refraction">Light — Reflection and Refraction</option>
+        <option value="The Human Eye and the Colourful World">The Human Eye and the Colourful World</option>
+        <option value="Natural Resources">Natural Resources</option>
 
-        <!-- Score Section (Hidden Initially) -->
-        <div id="result-screen" style="display:none;">
-            <h2>Quiz Completed!</h2>
-            <p id="final-score"></p>
-            <button onclick="location.reload()">Try Again</button>
-        </div>
+        <option value="The Rise of Nationalism in Europe">The Rise of Nationalism in Europe</option>
+        <option value="Nationalism in India">Nationalism in India</option>
+        <option value="The Making of a Global World">The Making of a Global World</option>
+        <option value="The Age of Industrialisation">The Age of Industrialisation</option>
+        <option value="Print Culture and the Modern World">Print Culture and the Modern World</option>
+        <option value="Resources and Development">Resources and Development</option>
+        <option value="Forest and Wildlife Resources">Forest and Wildlife Resources</option>
+        <option value="Water Resources">Water Resources</option>
+        <option value="Agriculture">Agriculture</option>
+        <option value="Minerals and Energy Resources">Minerals and Energy Resources</option>
+        <option value="Manufacturing Industries">Manufacturing Industries</option>
+        <option value="Lifelines of the National Economy">Lifelines of the National Economy</option>
+        <option value="Power Sharing">Power Sharing</option>
+        <option value="Federalism">Federalism</option>
+        <option value="Gender, Religion and Caste">Gender, Religion and Caste</option>
+
+        <option value="A Letter to God">A Letter to God</option>
+        <option value="Nelson Mandela: Long Walk to Freedom">Nelson Mandela: Long Walk to Freedom</option>
+        <option value="Two Stories about Flying">Two Stories about Flying</option>
+        <option value="From the Diary of Anne Frank">From the Diary of Anne Frank</option>
+        <option value="The Hundred Dresses – I">The Hundred Dresses – I</option>
+        <option value="The Hundred Dresses – II">The Hundred Dresses – II</option>
+        <option value="Glimpses of India">Glimpses of India</option>
+        <option value="The Making of a Scientist">The Making of a Scientist</option>
+        <option value="The Necklace">The Necklace</option>
+        <option value="The Book That Saved the Earth">The Book That Saved the Earth</option>
+
+        <option value="सूरदास">सूरदास</option>
+        <option value="तुलसीदास">तुलसीदास</option>
+        <option value="देव">देव</option>
+        <option value="जयशंकर प्रसाद">जयशंकर प्रसाद</option>
+        <option value="सूर्यकांत त्रिपाठी ‘निराला'">सूर्यकांत त्रिपाठी ‘निराला'</option>
+        <option value="नागार्जुन">नागार्जुन</option>
+        <option value="गिरिजा कुमार माथुर">गिरिजा कुमार माथुर</option>
+        <option value="ऋतुराज">ऋतुराज</option>
+        <option value="माता का अँचल">माता का अँचल</option>
+        <option value="जॉर्ज पंचम की नाक">जॉर्ज पंचम की नाक</option>
+        <option value="साना – साना हाथ जोड़ि…">साना – साना हाथ जोड़ि…</option>
+        <option value="एही ठैयाँ झुलनी हेरानी हो रामा!">एही ठैयाँ झुलनी हेरानी हो रामा!</option>
+        <option value="मैं क्यों लिखता हूँ?">मैं क्यों लिखता हूँ?</option>
+      </select>
+
+      <button id="startQuiz">Start Quiz</button>
     </div>
-    <div>Sorry! Currently this service isn't available</div>
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const API_ENDPOINT = "https://api.together.xyz/v1/chat/completions"; // Together AI API
-        const API_KEY = "9c2a5107b4669354fd598a8e0c0484e71ec37ba81bebc061bc4bd3f286ca0423"; // Replace with your actual API key
-        const MODEL_NAME = "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo-128K";
 
-        let quizData = [];
-        let currentQuestionIndex = 0;
-        let score = 0;
-        let timer;
+    <!-- Quiz Section -->
+    <div id="quiz-screen" style="display:none;">
+      <h2 id="question"></h2>
+      <div id="options"></div>
+      <p id="timer">Time Left: <span id="time">30</span> sec</p>
+      <p id="feedback"></p>
+      <button id="nextQuestion" style="display:none;">Next</button>
+    </div>
 
-        // Start Quiz Button
-        document.getElementById("startQuiz").addEventListener("click", async function () {
-            const subject = document.getElementById("subject").value;
-            const chapter = document.getElementById("chapter").value;
+    <!-- Result Section -->
+    <div id="result-screen" style="display:none;">
+      <h2>Quiz Completed!</h2>
+      <p id="final-score"></p>
+      <button onclick="location.reload()">Try Again</button>
+    </div>
+  </div>
 
-            document.getElementById("selection-screen").style.display = "none";
-            document.getElementById("quiz-screen").style.display = "block";
+  <footer>© 2025 Developer Fidaur | AI-Powered Quiz Platform</footer>
 
-            quizData = await fetchMCQs(subject, chapter);
+  <script>
+  let quizData = [];
+let currentQuestionIndex = 0;
+let score = 0;
+let timer;
 
-            if (quizData.length > 0) {
-                startQuiz();
-            } else {
-                alert("Failed to load questions. Try again.");
-                location.reload();
-            }
-        });
+document.getElementById("startQuiz").addEventListener("click", async function() {
+  const subject = document.getElementById("subject").value;
+  const chapter = document.getElementById("chapter").value;
 
-        // Fetch MCQs from Together AI API
-        async function fetchMCQs(subject, chapter) {
-            try {
-                const response = await fetch(API_ENDPOINT, {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "Authorization": `Bearer ${API_KEY}`
-                    },
-                    body: JSON.stringify({
-                        model: MODEL_NAME,
-                        messages: [
-                            {
-                                role: "system",
-                                content: `Generate 5 multiple-choice questions for Class 10 CBSE ${subject}, Chapter: ${chapter}. 
-                                    Provide options, the correct answer, and a short explanation in JSON format like this:
-                                    [{"question": "What is 2+2?", "options": ["3", "4", "5", "6"], "correct_answer": "4", "explanation": "2+2 is 4."}, ...]`
-                            }
-                        ]
-                    })
-                });
+  // Hide selection and show quiz screen
+  document.getElementById("selection-screen").style.display = "none";
+  document.getElementById("quiz-screen").style.display = "block";
 
-                const data = await response.json();
-                console.log("API Response:", data);
-localStorage.setItem('DATA',JSON.stringify(data))
-                if (!data.choices || !data.choices[0] || !data.choices[0].message || !data.choices[0].message.content) {
-                    console.error("Invalid API response format:", data);
-                    return [];
-                }
+  // Fetch questions from Together AI API
+  quizData = await fetchMCQs(subject, chapter);
 
-                let content = data.choices[0].message.content;
-                content = content.replace(/```json|```/g, "").trim();
+  if (quizData.length > 0) {
+    startQuiz();
+  } else {
+    alert("Failed to load questions. Try again.");
+    // location.reload();
+  }
+});
+let apiResponse = null;
+async function fetchMCQs(subject, chapter) {
+  const API_KEY = "689742d9a6ab10bc669d9386c4f3007d2e3b81ca543e80e83f12b6e7855ffcc4"; // Replace with your actual API key
 
-                let questions;
-                try {
-                    questions = JSON.parse(content);
-                } catch (error) {
-                    console.error("Error parsing JSON from API:", error);
-                    return [];
-                }
-
-                return Array.isArray(questions) ? questions : [];
-            } catch (error) {
-                console.error("Error fetching MCQs:", error);
-                return [];
-            }
-        }
-
-        // Start Quiz
-        function startQuiz() {
-            currentQuestionIndex = 0;
-            score = 0;
-            showQuestion();
-        }
-
-        // Display Question
-        function showQuestion() {
-            clearInterval(timer);
-
-            if (currentQuestionIndex >= quizData.length) {
-                endQuiz();
-                return;
-            }
-
-            const questionData = quizData[currentQuestionIndex];
-            document.getElementById("question").innerText = questionData.question;
-
-            const optionsContainer = document.getElementById("options");
-            optionsContainer.innerHTML = "";
-
-            questionData.options.forEach((option) => {
-                const button = document.createElement("button");
-                button.innerText = option;
-                button.addEventListener("click", () => checkAnswer(button, option, questionData.correct_answer, questionData.explanation));
-                optionsContainer.appendChild(button);
-            });
-
-            startTimer();
-        }
-
-        // Start Timer
-        function startTimer() {
-            let timeLeft = 30;
-            document.getElementById("time").innerText = timeLeft;
-            timer = setInterval(() => {
-                timeLeft--;
-                document.getElementById("time").innerText = timeLeft;
-                if (timeLeft === 0) {
-                    clearInterval(timer);
-                    nextQuestion();
-                }
-            }, 1000);
-        }
-
-        // Check Answer
-        function checkAnswer(button, selected, correct, explanation) {
-            clearInterval(timer);
-            document.getElementById("feedback").innerText = selected === correct 
-                ? "Correct! 🎉" 
-                : `Wrong ❌. Correct Answer: ${correct}\nExplanation: ${explanation}`;
-
-            if (selected === correct) score++;
-
-            document.querySelectorAll("#options button").forEach(btn => {
-                btn.disabled = true;
-                btn.style.backgroundColor = btn.innerText === correct ? "green" : "red";
-            });
-
-            document.getElementById("nextQuestion").style.display = "block";
-        }
-
-        // Next Question Button
-        document.getElementById("nextQuestion").addEventListener("click", function () {
-            currentQuestionIndex++;
-            document.getElementById("feedback").innerText = "";
-            document.getElementById("nextQuestion").style.display = "none";
-
-            showQuestion();
-        });
-
-        // End Quiz
-        function endQuiz() {
-            document.getElementById("quiz-screen").style.display = "none";
-            document.getElementById("result-screen").style.display = "block";
-            document.getElementById("final-score").innerText = `You scored ${score}/${quizData.length}`;
-        }
+  try {
+    const response = await fetch("https://api.together.xyz/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${API_KEY}`,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        model: "mistralai/Mistral-7B-Instruct-v0.2",
+        messages: [{
+          role: "user",
+          content: `You arr a board exam expert,having 5+ years of experience in setting cbse exam papers. You know inside secrets of cbse.Generate 10 multiple-choice questions for Class 10 CBSE  ${subject}, Chapter: ${chapter}.According to the latest syllabus to prepare for boards. Do not write any message like this -here are 10 multiple choice question...
+                    Directly give only json format response.
+                    Provide options, the correct answer, and a short explanation in JSON format like this:
+                    [{"question": "What is 2+2?", "options": ["3", "4", "5", "6"], "correct_answer": "4", "explanation": "2+2 is 4."}, ...]`
+                }]
+      })
     });
 
-</script>
+    const data = await response.json();
+    console.log("API Response:", data);
+
+    if (!data.choices || !data.choices[0]?.message?.content) {
+      console.error("Invalid API response format:", data);
+      return [];
+    }
+
+    // Extract and parse JSON content
+    let jsonString = data.choices[0].message.content.replace(/```json|```/g, "").trim();
+    return JSON.parse(jsonString);
+
+  } catch (error) {
+    console.error("Error fetching MCQs:", error);
+    return [];
+  }
+}
+
+function startQuiz() {
+  currentQuestionIndex = 0;
+  score = 0;
+  showQuestion();
+}
+
+function showQuestion() {
+  clearInterval(timer);
+
+  if (currentQuestionIndex >= quizData.length) {
+    endQuiz();
+    return;
+  }
+
+  const currentQuestion = quizData[currentQuestionIndex];
+  document.getElementById("question").innerText = currentQuestion.question;
+
+  const optionsContainer = document.getElementById("options");
+  optionsContainer.innerHTML = "";
+
+  currentQuestion.options.forEach((option) => {
+    const button = document.createElement("button");
+    button.innerText = option;
+    button.onclick = () => checkAnswer(option, currentQuestion.correct_answer, currentQuestion.explanation);
+    optionsContainer.appendChild(button);
+  });
+
+  startTimer();
+}
+
+function startTimer() {
+  let timeLeft = 30;
+  document.getElementById("time").innerText = timeLeft;
+  timer = setInterval(() => {
+    timeLeft--;
+    document.getElementById("time").innerText = timeLeft;
+    if (timeLeft === 0) {
+      clearInterval(timer);
+      nextQuestion();
+    }
+  }, 1000);
+}
+
+function checkAnswer(selected, correct, explanation) {
+  clearInterval(timer);
+  document.getElementById("feedback").innerText = selected === correct ?
+    "Correct! 🎉" :
+    `Wrong ❌. Correct Answer: ${correct}\nExplanation: ${explanation}`;
+
+  if (selected === correct) score++;
+
+  document.getElementById("nextQuestion").style.display = "block";
+}
+
+document.getElementById("nextQuestion").addEventListener("click", function() {
+  currentQuestionIndex++;
+  document.getElementById("feedback").innerText = "";
+  document.getElementById("nextQuestion").style.display = "none";
+
+  showQuestion();
+});
+
+function endQuiz() {
+  document.getElementById("quiz-screen").style.display = "none";
+  document.getElementById("result-screen").style.display = "block";
+  document.getElementById("final-score").innerText = `You scored ${score}/${quizData.length}`;
+}
+    // your JavaScript code remains same as before
+  </script>
 </body>
 </html>
